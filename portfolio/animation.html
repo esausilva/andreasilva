@@ -1,0 +1,36 @@
+---
+layout: sub
+title: Animation
+---
+
+<h1>Animation</h1>
+<hr />
+
+<p>Bacon ipsum dolor amet ham corned beef shank, porchetta landjaeger beef frankfurter pork chop venison short ribs alcatra hamburger 
+  andouille leberkas. Jowl landjaeger boudin brisket strip steak jerky. Capicola pig strip steak tenderloin, cupim pork belly rump bacon 
+  prosciutto doner ball tip biltong andouille kielbasa jowl. Bacon jowl beef ribs, prosciutto filet mignon sirloin doner rump shank 
+  shoulder andouille kevin turkey fatback.</p>
+
+<div id="gallery" style="display:none;">
+  {% for video in site.data.portfolio.animation %}
+    <div data-type="html5video"
+      data-thumb="{{ site.baseurl }}/assets/images/portfolio/animation/{{ video.image }}"
+      data-image="{{ site.baseurl }}/assets/images/portfolio/animation/{{ video.image }}"
+      data-videomp4="{{ site.baseurl }}/assets/images/portfolio/animation/{{ video.src }}"
+      data-title="{{ video.title }}"
+      data-description="{{ video.description }}"></div>
+  {% endfor %}
+</div>
+
+<p>**This is just a sample</p>
+
+<script type='text/javascript' src='{{ site.baseurl }}/assets/plugins/unitegallery/js/unitegallery.min.js'></script>	
+<link rel='stylesheet' href='{{ site.baseurl }}/assets/plugins/unitegallery/css/unite-gallery.css' type='text/css' />
+<script type='text/javascript' src='{{ site.baseurl }}/assets/plugins/unitegallery/themes/video/ug-theme-video.js'></script>
+<link rel='stylesheet' href='{{ site.baseurl }}/assets/plugins/unitegallery/themes/video/skin-right-thumb.css' type='text/css' />
+
+<script type="text/javascript">
+  $(document).ready(function(){
+    $("#gallery").unitegallery();
+  });
+</script>

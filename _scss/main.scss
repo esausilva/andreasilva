@@ -1,0 +1,56 @@
+html { 
+    font-size: 62.5%; 
+    height: 100%;
+    box-sizing: border-box;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+    font-family: 'Century Gothic' !important;
+    position: relative;
+    margin: 0;
+    min-height: 94%;
+    padding-bottom: 10rem;
+    background-color: #FBFAF2;
+}
+
+@import 'navigation';
+@import 'header';
+@import 'footer';
+@import 'featuredImgs';
+
+// ===== Content
+.content {
+  margin: 50px 0 0 0;
+}
+
+.content-sub {
+  margin-top: 50px;
+  margin-bottom: 10px;
+  font-size: 1.7rem;
+}
+
+.nopadding {
+   padding: 0 !important;
+   margin: 0 !important;
+}
+
+.featured-imgs {
+  img {
+      width: 100%;
+    height: auto;
+  }
+  
+  div {
+      cursor: pointer;
+  }
+}
+
+#gallery {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}

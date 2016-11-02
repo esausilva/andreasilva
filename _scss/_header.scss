@@ -1,0 +1,52 @@
+#header, #header-sub {
+  background: url(../images/headerBg.jpg) #32191F no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  padding-top: 40px;
+}
+
+#logo-text {
+  color: #fff;
+  font-size: 5rem;
+  display: block;
+  margin-top: 15px;
+  line-height: 5rem;
+  text-shadow: 3px 3px #333333;
+}
+
+#header-sub {
+    height: 210px;
+    padding-top: 13px;
+
+    img {
+      width: 130px; 
+    }
+
+    #logo-text {
+      display: inline;
+      top: 50px;
+      line-height: 0.5rem;
+    }
+}
+
+@media (max-width:767px) {
+  #logo-text {
+    font-size: 3rem;
+
+    span {
+      display: block;
+      margin-top: -55px;
+      margin-left: 60px;
+    }
+  }
+}
+
+@media (max-width:321px) {
+    #header-sub {
+      #logo-text {
+        display: none;
+      }
+  }
+}

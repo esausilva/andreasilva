@@ -1,0 +1,286 @@
+{
+  "design": [
+    {
+      "alt": "Web banner for a backpack giveaway contest for KJIL",    
+      "thumb": "Back_In_School-tn.jpg",
+      "full": "Back_In_School.jpg",
+      "description": "Back In School"
+    },
+    {
+      "alt": "Business Card",    
+      "thumb": "deb_business_card-tn.jpg",
+      "full": "deb_business_card.jpg",
+      "description": "Deb Business Card"
+    },
+    {
+      "alt": "Frequency Bookmark ",    
+      "thumb": "frequency_bookmarks-tn.jpg",
+      "full": "frequency_bookmarks.jpg",
+      "description": "Frequency Bookmark"
+    },
+    {
+      "alt": "Logo for KHYM, a Christian radio station reaching southwest Kansas and parts of the Oklahoma and Texas panhandles",    
+      "thumb": "khym_logo-tn.jpg",
+      "full": "khym_logo.jpg",
+      "description": "KHYM Logo"
+    },
+    {
+      "alt": "KJIL and KHYM 20 Year Logo - used in multiple promotions items in 2012",    
+      "thumb": "kjil_20_years_logo-tn.jpg",
+      "full": "kjil_20_years_logo.jpg",
+      "description": "KJIL 20 Year Logo"
+    },
+    {
+      "alt": "KJIL Car Wrap",    
+      "thumb": "kjil_car_wrap-tn.jpg",
+      "full": "kjil_car_wrap.jpg",
+      "description": "KJIL Car Wrap"
+    },
+    {
+      "alt": "KJIL Homepage",    
+      "thumb": "kjil_hompage-tn.jpg",
+      "full": "kjil_hompage.jpg",
+      "description": "KJIL Homepage"
+    },
+    {
+      "alt": "Children's T-Shirt",    
+      "thumb": "kjil_tshirt_pink-tn.jpg",
+      "full": "kjil_tshirt_pink.jpg",
+      "description": "KJIL Pink T-shirt"
+    },
+    {
+      "alt": "KJIL T-shirt",    
+      "thumb": "kjil_tshirt_red-tn.jpg",
+      "full": "kjil_tshirt_red.jpg",
+      "description": "KJIL Red T-shirt"
+    },
+    {
+      "alt": "Brochure for David Munoz Photography",    
+      "thumb": "Munoz_Brochure-tn.jpg",
+      "full": "Munoz_Brochure.jpg",
+      "description": "Munoz Brochure"
+    },
+    {
+      "alt": "Pastor Appreciation Postcard",    
+      "thumb": "pastor_appreciation-tn.jpg",
+      "full": "pastor_appreciation.jpg",
+      "description": "Pastor Appreciation Card"
+    },
+    {
+      "alt": "Prism Font",    
+      "thumb": "prism_font-tn.jpg",
+      "full": "prism_font.jpg",
+      "description": "Prism Font"
+    },
+    {
+      "alt": "Pull Forward Pay Back - logo designed for a promotion encouraging KJIL listeners to pull forward in the drive thru and pay for the person behind them",    
+      "thumb": "pull_forward_logo-tn.jpg",
+      "full": "pull_forward_logo.jpg",
+      "description": "Pull Forward Logo"
+    },
+    {
+      "alt": "Tabor College T-shirt - winning design printed on t-shirts and given to prospective college students",    
+      "thumb": "Tabor_shirt-tn.jpg",
+      "full": "Tabor_shirt.jpg",
+      "description": "Tabor College T-shirt"
+    },
+    {
+      "alt": "KVMV Happy Thanksgiving Card",    
+      "thumb": "Thanks_KVMV-tn.jpg",
+      "full": "Thanks_KVMV.jpg",
+      "description": "KVMV Happy Thanksgiving Card"
+    },
+    {
+      "alt": "Web bannner for a Valentine's Day contest with KJIL ",    
+      "thumb": "UDN_Valentines_Giveaway-tn.jpg",
+      "full": "UDN_Valentines_Giveaway.jpg",
+      "description": "Ultimate Date Night Card"
+    }
+  ],
+  "art": [
+    {
+      "alt": "Banker and Bandersnatch",    
+      "thumb": "Banker_and_Bandersnatch-tn.jpg",
+      "full": "Banker_and_Bandersnatch.jpg",
+      "description": "Banker and Bandersnatch"
+    },
+    {
+      "alt": "Birthday",    
+      "thumb": "Birthday-tn.jpg",
+      "full": "Birthday.jpg",
+      "description": "Birthday"
+    },
+    {
+      "alt": "Chocloate Park",    
+      "thumb": "Chocolate_Park-tn.jpg",
+      "full": "Chocolate_Park.jpg",
+      "description": "Chocolate Park"
+    },
+    {
+      "alt": "Christmas with the Trolls",    
+      "thumb": "Christmas_with_the_Trolls-tn.jpg",
+      "full": "Christmas_with_the_Trolls.jpg",
+      "description": "Christmas with the Trolls"
+    },
+    {
+      "alt": "Feed the Birds",    
+      "thumb": "Feed_the_Birds-tn.jpg",
+      "full": "Feed_the_Birds.jpg",
+      "description": "Feed the Birds"
+    },
+    {
+      "alt": "Garden Hoses",    
+      "thumb": "garden_hoses-tn.jpg",
+      "full": "garden_hoses.jpg",
+      "description": "Garden Hoses"
+    },
+    {
+      "alt": "Miracle on 34th Street",    
+      "thumb": "Miracle_on_34th_Street-tn.jpg",
+      "full": "Miracle_on_34th_Street.jpg",
+      "description": "Miracle on 34th Street"
+    },
+    {
+      "alt": "Proposal",    
+      "thumb": "proposal-tn.jpg",
+      "full": "proposal.jpg",
+      "description": "Proposal"
+    },
+    {
+      "alt": "The Magician's Nephew",    
+      "thumb": "The_Magicians_Nephew-tn.jpg",
+      "full": "The_Magicians_Nephew.jpg",
+      "description": "The Magicians Nephew"
+    },
+    {
+      "alt": "The Underground",    
+      "thumb": "The_Underground-tn.jpg",
+      "full": "The_Underground.jpg",
+      "description": "The Underground"
+    },
+    {
+      "alt": "Venice",    
+      "thumb": "Venice-tn.jpg",
+      "full": "Venice.jpg",
+      "description": "Venice"
+    },
+    {
+      "alt": "Wedding",    
+      "thumb": "wedding-tn.jpg",
+      "full": "wedding.jpg",
+      "description": "Wedding"
+    },
+    {
+      "alt": "Wisdom Cafe",    
+      "thumb": "Wisdom_Cafe-tn.jpg",
+      "full": "Wisdom_Cafe.jpg",
+      "description": "Wisdom Cafe"
+    },
+    {
+      "alt": "Wursterei",    
+      "thumb": "Wursterei-tn.jpg",
+      "full": "Wursterei.jpg",
+      "description": "Wursterei"
+    }
+  ],
+  "photography": [
+    {
+      "alt": "IMG_1649",    
+      "thumb": "IMG_1649-tn.jpg",
+      "full": "IMG_1649.jpg",
+      "description": "IMG_1649"
+    },
+    {
+      "alt": "IMG_6655",    
+      "thumb": "IMG_6655-tn.jpg",
+      "full": "IMG_6655.jpg",
+      "description": "IMG_6655"
+    },
+    {
+      "alt": "IMG_6704",    
+      "thumb": "IMG_6704-tn.jpg",
+      "full": "IMG_6704.jpg",
+      "description": "IMG_6704"
+    },
+    {
+      "alt": "IMG_6735",    
+      "thumb": "IMG_6735-tn.jpg",
+      "full": "IMG_6735.jpg",
+      "description": "IMG_6735"
+    },
+    {
+      "alt": "IMG_6944",    
+      "thumb": "IMG_6944-tn.jpg",
+      "full": "IMG_6944.jpg",
+      "description": "IMG_6944"
+    },
+    {
+      "alt": "IMG_6965",    
+      "thumb": "IMG_6965-tn.jpg",
+      "full": "IMG_6965.jpg",
+      "description": "IMG_6965"
+    },
+    {
+      "alt": "IMG_7021",    
+      "thumb": "IMG_7021-tn.jpg",
+      "full": "IMG_7021.jpg",
+      "description": "IMG_7021-tn"
+    },
+    {
+      "alt": "IMG_7344",    
+      "thumb": "IMG_7344-tn.jpg",
+      "full": "IMG_7344.jpg",
+      "description": "IMG_7344"
+    },
+    {
+      "alt": "IMG_8569",    
+      "thumb": "IMG_8569-tn.jpg",
+      "full": "IMG_8569.jpg",
+      "description": "IMG_8569"
+    },
+    {
+      "alt": "IMG_8681",    
+      "thumb": "IMG_8681-tn.jpg",
+      "full": "IMG_8681.jpg",
+      "description": "IMG_8681"
+    },
+    {
+      "alt": "IMG_8729",    
+      "thumb": "IMG_8729-tn.jpg",
+      "full": "IMG_8729.jpg",
+      "description": "IMG_8729"
+    },
+    {
+      "alt": "IMG_62722",    
+      "thumb": "IMG_62722-tn.jpg",
+      "full": "IMG_62722.jpg",
+      "description": "IMG_62722"
+    },
+    {
+      "alt": "IMG_70013",    
+      "thumb": "IMG_70013-tn.jpg",
+      "full": "IMG_70013.jpg",
+      "description": "IMG_70013"
+    }
+  ],
+  "animation": [
+    {
+      "title": "Coloring Contest 2015",    
+      "image": "Coloring_Contest_2015.png",
+      "src": "Coloring_Contest_2015.mp4",
+      "description": "Coloring Contest 2015"
+    },
+    {
+      "title": "February Budget Monster",    
+      "image": "February_Budget_Monster.png",
+      "src": "February_Budget_Monster.mp4",
+      "description": "February Budget Monster"
+    },
+    {
+      "title": "Magnify Animated",    
+      "image": "Magnify_Animated.png",
+      "src": "Magnify_Animated.mp4",
+      "description": "Magnify Animated"
+    }
+  ]
+}

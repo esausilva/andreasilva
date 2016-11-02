@@ -1,0 +1,27 @@
+---
+layout: sub
+title: Design
+---
+<h1>Design</h1>
+<hr />
+
+<p>Bacon ipsum dolor amet ham corned beef shank, porchetta landjaeger beef frankfurter pork chop venison short ribs alcatra hamburger 
+  andouille leberkas. Jowl landjaeger boudin brisket strip steak jerky. Capicola pig strip steak tenderloin, cupim pork belly rump bacon 
+  prosciutto doner ball tip biltong andouille kielbasa jowl. Bacon jowl beef ribs, prosciutto filet mignon sirloin doner rump shank 
+  shoulder andouille kevin turkey fatback.</p>
+
+<div id="gallery" style="display:none;">
+  {% for image in site.data.portfolio.design %}
+    <a href="http://andreasilva.design">
+      <img alt="{{ image.alt }}"
+        src="{{ site.baseurl }}/assets/images/portfolio/design/{{ image.thumb }}"
+        data-image="{{ site.baseurl }}/assets/images/portfolio/design/{{ image.full }}"
+        data-description="{{ image.description }}"
+        style="display:none">
+    </a>
+  {% endfor %}
+</div>
+
+<p>**This is just a sample</p>
+
+{% include uniteGallery.html %}
