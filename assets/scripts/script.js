@@ -9,14 +9,14 @@ $(document).ready(function ($) {
 
   //First resize if mobile
   if (windowObj.height() < 420) {
-      headerHeight = parseFloat(windowObj.height()) * parseFloat(.75);
+      headerHeight = parseFloat(windowObj.height()) * parseFloat(.81);
       logoMainHeight = headerHeight - 100;
-
+      
       $('#header').height(headerHeight);
       $('#logo-main').height(logoMainHeight);
   } else {
-      headerHeight = parseFloat(windowObj.height()) * parseFloat(.50);
-      logoMainHeight = headerHeight - 138;
+      headerHeight = parseFloat(windowObj.height()) * parseFloat(.91);
+      logoMainHeight = headerHeight - 238;
       
       $('#header').height(headerHeight);
       $('#logo-main').height(logoMainHeight);
@@ -25,15 +25,15 @@ $(document).ready(function ($) {
   //Resize when body changes height or mobile changes from portrait to landscape 
   $(body).on("mresize", function () {
     if (windowObj.height() < 420) {
-      headerHeight = parseFloat(windowObj.height()) * parseFloat(.75);
+      headerHeight = parseFloat(windowObj.height()) * parseFloat(.81);
       logoMainHeight = headerHeight - 100;
 
       $('#header').height(headerHeight);
       $('#logo-main').height(logoMainHeight);
     } else {
       if (resizeCount > 0) {
-        headerHeight = parseFloat(windowObj.height()) * parseFloat(.50);
-        logoMainHeight = headerHeight - 138;
+        headerHeight = parseFloat(windowObj.height()) * parseFloat(.91);
+        logoMainHeight = headerHeight - 238;
 
         $('#header').height(headerHeight);
         $('#logo-main').height(logoMainHeight);
@@ -60,9 +60,3 @@ $(document).ready(function ($) {
     $('#AnimationLnk')[0].click();
   });
 });
-
-/*
-$('.top-stats .panel').click(function () {
-  $('#open-dashboards')[0].click();
-});
-*/

@@ -8,11 +8,9 @@
 # in the templates via {{ site.myvariable }}.
 title: Andrea Silva | Design
 email: esausilva85@gmail.com
-description: > 
-    A starter project including full setup for Jekyll, GulpJS, SASS, PostCSS, AutoPrefixer & BrowserSync.
-    Ready for deployment to GitHub pages with gulp-gh-pages. 
-baseurl: "/andreasilva" # the subpath of your site, e.g. /blog
-url: "http://yourusername.github.io/andreasilva" # the base hostname & protocol for your site, e.g. http://example.com
+description: Graphic Designer based in McAllen , TX 
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "http://andreasilva.design/" # the base hostname & protocol for your site, e.g. http://example.com
 
 # Build settings
 markdown: kramdown
@@ -20,4 +18,4 @@ exclude: ["node_modules", "gulpfile.js", "package.json"]
 gems:
     - jekyll-minifier
 jekyll-minifier:
-  exclude: "*.css"
+  exclude: ["assets/css/*.css","*.min.*"]
