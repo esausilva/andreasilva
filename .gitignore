@@ -5,3 +5,4 @@ node_modules
 .publish
 .DS_Store 
 _includes/googleAnalytics.html
+assets/images/portfolio/**/*
