@@ -1,1 +1,478 @@
-function UGTheme_video(){function e(e,i){E=e,j=jQuery.extend(j,x),j=jQuery.extend(j,i),j.strippanel_vertical_type=!0,t(),E.setOptions(j),0==C.isVertical&&E.setFuncCustomHeight(d),S.init(e,j),S.setOrientation(C.panel_position),S.setCustomThumbs(a),S.setDisabledAtStart(j.theme_disable_panel_timeout);var n=E.getGalleryID();w.init(j,!0,n),_=e.getObjects(),g=jQuery(e),m=_.g_objWrapper}function t(){switch(j.theme_skin){case"right-no-thumb":case"right-title-only":C.putButtonsPanel=!0;break;case"bottom-text":C.panel_position="bottom"}switch(C.panel_position){case"top":case"bottom":C.isVertical=!1,j.strippanel_vertical_type=!1}}function i(){s(),r(),l(),b&&u()}function n(){o(),i(),v(),w.show()}function o(){if(m.addClass("ug-theme-video ug-videoskin-"+j.theme_skin),S.setHtml(),w.setHtml(m),1==C.putButtonsPanel){var e="<div class='ug-video-buttons-panel'>";e+="<div href='javascript:void(0)' class='ug-button-prev-video'></div>",e+="<div href='javascript:void(0)' class='ug-button-next-video'></div>",e+="</div>",m.append(e),b=m.children(".ug-video-buttons-panel"),f=b.children(".ug-button-prev-video"),y=b.children(".ug-button-next-video")}}function a(e,t){var i=!0,n=!1;switch(j.theme_skin){case"right-title-only":i=!1;break;case"right-thumb":n=!0}var o="<div class='ug-thumb-inner'>";1==n&&(o+="<div class='ug-thumb-icon' style='background-image:url(\""+t.urlThumb+"\")'></div>",o+="<div class='ug-thumb-right'>"),o+="<div class='ug-thumb-title'>"+t.title+"</div>",1==i&&(o+="<div class='ug-thumb-desc'>"+t.description+"</div>"),1==n&&(o+="</div>"),o+="</div>",e.html(o)}function s(){var e=E.getSize();0==C.isVertical?S.setWidth(e.width):S.setHeight(e.height),S.run()}function r(){var e=S.getElement();switch(C.panel_position){default:case"right":k.placeElement(e,"right",0);break;case"bottom":k.placeElement(e,0,"bottom")}}function l(){var e=k.getElementSize(m),t=S.getSize(),i=e.width,n=e.height,o=0,a=0;if(S){var t=S.getSize();switch(C.panel_position){case"left":a=t.right,i=e.width-t.right;break;case"right":i=t.left;break;case"top":n=e.height-t.bottom,o=t.bottom;break;case"bottom":n=t.top}}if(b&&b.is(":visible")){var s=k.getElementSize(b),r=s.height;n-=r}w.setSize(i,n);var l=w.getObject();k.placeElement(l,a,o),null==C.playerRatio&&(C.playerRatio=n/i)}function u(){if(!b)return!1;if(0==b.is(":visible"))return!1;var e=w.getObject(),t=k.getElementSize(e);b.width(t.width),k.placeElement(b,0,"bottom")}function d(e){s();var t=S.getSize(),i=t.height,n=e.width,o=C.playerRatio*n,a=o+i;return a}function c(){i()}function h(){var e=j.theme_autoplay,t=E.getSelectedItem();switch(t.type){case"youtube":w.playYoutube(t.videoid,e);break;case"vimeo":w.playVimeo(t.videoid,e);break;case"html5video":w.playHtml5Video(t.videoogv,t.videowebm,t.videomp4,t.urlImage,e);break;case"wistia":w.playWistia(t.videoid,e);break;case"soundcloud":w.playSoundCloud(t.trackid,e)}C.isFirstChange=!1}function p(){1==j.theme_next_video_onend&&E.nextItem()}function v(){g.on(E.events.SIZE_CHANGE,c),g.on(E.events.ITEM_CHANGE,h),w.initEvents(),1==j.theme_next_video_onend&&jQuery(w).on(w.events.VIDEO_ENDED,p),b&&(k.setButtonMobileReady(f),E.setPrevButton(f),k.setButtonMobileReady(y),E.setNextButton(y))}var g,_,m,b,f,y,E=new UniteGalleryMain,w=new UGVideoPlayer,k=new UGFunctions,S=new UGStripPanel,j={theme_skin:"right-thumb",theme_autoplay:!1,theme_next_video_onend:!1,theme_disable_panel_timeout:2500},x={gallery_width:1100,slider_controls_always_on:!0,strippanel_enable_handle:!1,strippanel_enable_buttons:!1,strip_space_between_thumbs:0,strippanel_padding_top:0,strippanel_padding_bottom:0,strippanel_padding_left:0,strippanel_padding_right:0,strippanel_vertical_type:!0},C={panel_position:"right",isVertical:!0,putButtonsPanel:!1,isFirstChange:!0,playerRatio:null};this.destroy=function(){g.off(E.events.SIZE_CHANGE),g.off(E.events.ITEM_CHANGE),w.destroy(),b&&(k.destroyButton(f),k.destroyButton(y)),1==j.theme_next_video_onend&&jQuery(w).off(w.events.VIDEO_ENDED),S&&S.destroy()},this.run=function(){n()},this.init=function(t,i){e(t,i)}}"undefined"!=typeof g_ugFunctions?g_ugFunctions.registerTheme("video"):jQuery(document).ready(function(){g_ugFunctions.registerTheme("video")});
+
+if(typeof g_ugFunctions != "undefined")
+	g_ugFunctions.registerTheme("video");
+else 
+	jQuery(document).ready(function(){g_ugFunctions.registerTheme("video")});
+
+
+/**
+ * Video gallery theme
+ * themes: right-thumb | right-title-only | right-no-thumb | bottom-text
+ */
+function UGTheme_video(){
+
+	var t = this;
+	var g_gallery = new UniteGalleryMain(), g_objGallery, g_objects, g_objWrapper; 
+	var g_objPlayer = new UGVideoPlayer(), g_objButtonsPanel, g_buttonPrev, g_buttonNext;
+	var g_functions = new UGFunctions();
+	var g_objPanel = new UGStripPanel();
+	
+
+	//theme options
+	var g_options = {
+			theme_skin: "right-thumb",			//right-thumb | right-title-only | right-no-thumb | bottom-thumb
+			theme_autoplay: false,				//autoplay videos at start.  true / false. Don't working on mobiles.
+			theme_next_video_onend:false, 		//go to next video automatically when the video ends
+			theme_disable_panel_timeout: 2500	//How much time the right panel will be disabled. in ms
+	};
+	
+	//global defaults
+	var g_defaults = {
+			gallery_width:1100,
+			slider_controls_always_on:true,
+			strippanel_enable_handle:false,
+			strippanel_enable_buttons: false,
+			strip_space_between_thumbs: 0,
+			strippanel_padding_top: 0,
+			strippanel_padding_bottom: 0,
+			strippanel_padding_left: 0,
+			strippanel_padding_right: 0,
+			strippanel_vertical_type:true
+	};
+		
+	
+	//temp variables
+	var g_temp = {
+			panel_position:"right",
+			isVertical: true,
+			putButtonsPanel: false,
+			isFirstChange: true,
+			playerRatio:null,
+	};
+	
+	
+	/**
+	 * Init the theme
+	 */
+	function initTheme(gallery, customOptions){
+		
+		g_gallery = gallery;
+		
+		g_options = jQuery.extend(g_options, g_defaults);
+		
+		g_options = jQuery.extend(g_options, customOptions);
+		g_options.strippanel_vertical_type = true;
+		
+		modifyOptions();
+		
+		//set gallery options
+		g_gallery.setOptions(g_options);
+		if(g_temp.isVertical == false)
+			g_gallery.setFuncCustomHeight(getHeightByWidthOnResize);
+		
+		//set panel options		
+		g_objPanel.init(gallery, g_options);			
+		g_objPanel.setOrientation(g_temp.panel_position);
+		
+		g_objPanel.setCustomThumbs(setHtmlThumb);
+		
+		g_objPanel.setDisabledAtStart(g_options.theme_disable_panel_timeout);
+		
+		var galleryID = g_gallery.getGalleryID();
+				
+		//set player options
+		g_objPlayer.init(g_options, true, galleryID);
+		
+		g_objects = gallery.getObjects();		
+		g_objGallery = jQuery(gallery);
+		g_objWrapper = g_objects.g_objWrapper;
+		
+	}
+	
+	
+	/**
+	 * modify options
+	 */
+	function modifyOptions(){
+		
+		switch(g_options.theme_skin){
+			case "right-no-thumb":
+			case "right-title-only":
+				g_temp.putButtonsPanel = true;
+			break;
+			case "bottom-text":
+				g_temp.panel_position = "bottom";				
+			break;
+		}
+		
+		//set isVertical
+		switch(g_temp.panel_position){
+			case "top":
+			case "bottom":
+				g_temp.isVertical = false;
+				g_options.strippanel_vertical_type = false;
+			break;
+		}
+		
+	}
+	
+	
+	/**
+	 * init all the theme's elements and set them to their places 
+	 * according gallery's dimentions.
+	 * this function should work on resize too.
+	 */
+	function initAndPlaceElements(){
+				
+		//place objects:
+		initThumbsPanel();
+		placeThumbsPanel();
+		placePlayer();
+		
+		if(g_objButtonsPanel)
+			resizeAndPlaceButtonsPanel();
+		
+	}
+	
+	
+	/**
+	 * run the theme
+	 */
+	function runTheme(){
+		
+		setHtml();
+		
+		initAndPlaceElements();
+		
+		initEvents();
+		
+		g_objPlayer.show();
+		
+	}
+	
+	
+	
+	
+	/**
+	 * set gallery html elements
+	 */
+	function setHtml(){
+				
+		//add html elements
+		g_objWrapper.addClass("ug-theme-video ug-videoskin-"+g_options.theme_skin);
+		
+		g_objPanel.setHtml();
+		g_objPlayer.setHtml(g_objWrapper);
+		
+		//add buttons panel
+		if(g_temp.putButtonsPanel == true){
+						
+			var html = "<div class='ug-video-buttons-panel'>";
+			html += "<div href='javascript:void(0)' class='ug-button-prev-video'></div>"
+			html += "<div href='javascript:void(0)' class='ug-button-next-video'></div>"
+			html += "</div>"
+			
+			g_objWrapper.append(html);
+			
+			g_objButtonsPanel = g_objWrapper.children(".ug-video-buttons-panel");
+			g_buttonPrev = g_objButtonsPanel.children(".ug-button-prev-video");
+			g_buttonNext = g_objButtonsPanel.children(".ug-button-next-video");
+						
+		}
+		
+	}
+	
+		
+	
+	/**
+	 * custom function foe drawing thumb
+	 */
+	function setHtmlThumb(objThumbWrapper, objItem){
+
+		var showDesc = true;
+		var showIcon = false;
+		
+		switch(g_options.theme_skin){
+			case "right-title-only":
+				showDesc = false;
+			break;
+			case "right-thumb":
+				showIcon = true;
+			break;
+		}
+		
+		var html = "<div class='ug-thumb-inner'>";
+
+		if(showIcon == true){
+			html += "<div class='ug-thumb-icon' style='background-image:url(\""+objItem.urlThumb+"\")'></div>";
+			html += "<div class='ug-thumb-right'>";
+		}
+			
+		html += "<div class='ug-thumb-title'>" + objItem.title + "</div>";
+		
+		if(showDesc == true)
+			html += "<div class='ug-thumb-desc'>" + objItem.description + "</div>";
+		
+		if(showIcon == true)
+			html += "</div>";	//thumb right end
+		
+		html += "</div>";
+		
+		objThumbWrapper.html(html);
+	
+	}
+	
+	
+	/**
+	 * init size of the thumbs panel
+	 */
+	function initThumbsPanel(){
+		
+		//set size:
+		var objGallerySize = g_gallery.getSize();
+
+		if(g_temp.isVertical == false)			
+			g_objPanel.setWidth(objGallerySize.width);
+		else
+			g_objPanel.setHeight(objGallerySize.height);
+		
+		g_objPanel.run();
+		
+	}
+	
+	
+	/**
+	 * place thumbs panel according the settings
+	 */
+	function placeThumbsPanel(){
+			
+		var objPanelElement = g_objPanel.getElement();
+		
+		switch(g_temp.panel_position){
+			default:
+			case "right":
+				g_functions.placeElement(objPanelElement, "right", 0);
+			break;
+			case "bottom":
+				g_functions.placeElement(objPanelElement, 0, "bottom");
+			break;
+		}
+		
+	} 
+	
+	
+	
+	/**
+	 * place the player according the thumbs panel size and position
+	 */
+	function placePlayer(){
+		
+		var gallerySize = g_functions.getElementSize(g_objWrapper);
+		var panelSize = g_objPanel.getSize();			
+		
+		var playerWidth = gallerySize.width;
+		var playerHeight = gallerySize.height;
+		var playerTop = 0;
+		var playerLeft = 0;
+		
+		if(g_objPanel){
+			
+			var panelSize = g_objPanel.getSize();
+			
+			switch(g_temp.panel_position){
+				case "left":
+					playerLeft = panelSize.right;
+					playerWidth = gallerySize.width - panelSize.right;	
+				break;
+				case "right":
+					playerWidth = panelSize.left;					
+				break;
+				case "top":
+					playerHeight = gallerySize.height - panelSize.bottom;
+					playerTop = panelSize.bottom;
+				break;
+				case "bottom":
+					playerHeight = panelSize.top;
+				break;
+			}
+			
+		}
+		
+		
+		if(g_objButtonsPanel && g_objButtonsPanel.is(":visible")){
+			var buttonsPanelSize = g_functions.getElementSize(g_objButtonsPanel);
+			var buttonsHeight = buttonsPanelSize.height;
+			playerHeight -= buttonsHeight;
+		}
+		
+		//set size
+		g_objPlayer.setSize(playerWidth, playerHeight);
+		
+		//place
+		var objPlayer = g_objPlayer.getObject();
+		g_functions.placeElement(objPlayer, playerLeft, playerTop);
+		
+		//remember player ratio
+		if(g_temp.playerRatio == null)
+			g_temp.playerRatio = playerHeight / playerWidth;
+		
+	}
+
+	
+	/**
+	 * resize and place buttons panel
+	 */
+	function resizeAndPlaceButtonsPanel(){
+		
+		if(!g_objButtonsPanel)
+			return(false);
+		
+		if(g_objButtonsPanel.is(":visible") == false)
+			return(false);
+		
+		var playerObj = g_objPlayer.getObject();
+		var playerSize = g_functions.getElementSize(playerObj);
+		
+		g_objButtonsPanel.width(playerSize.width);
+		
+		//position to the bottom of the gallery
+		g_functions.placeElement(g_objButtonsPanel, 0, "bottom");
+	}
+	
+	
+	/**
+	 * get height by width and raetio on resize
+	 */
+	function getHeightByWidthOnResize(objSize){
+		
+		initThumbsPanel();
+		var objPanelSize = g_objPanel.getSize();
+		var thumbsHeight = objPanelSize.height;
+		var newWidth = objSize.width;
+		
+		var playerHeight = g_temp.playerRatio * newWidth;
+		var newHeight = playerHeight + thumbsHeight;
+		
+		return(newHeight);
+	}
+	
+	
+	/**
+	 * on gallery size change - resize the theme.
+	 */
+	function onSizeChange(){
+		
+		initAndPlaceElements();
+	}
+	
+	
+	/**
+	 * on item change function
+	 */
+	function onItemChange(){
+		
+		var isAutoplay = g_options.theme_autoplay;
+		
+		var selectedItem = g_gallery.getSelectedItem();
+		
+		switch(selectedItem.type){
+			case "youtube":
+				g_objPlayer.playYoutube(selectedItem.videoid, isAutoplay);
+			break;
+			case "vimeo":
+				g_objPlayer.playVimeo(selectedItem.videoid, isAutoplay);
+			break;
+			case "html5video":
+				g_objPlayer.playHtml5Video(selectedItem.videoogv, selectedItem.videowebm, selectedItem.videomp4, selectedItem.urlImage, isAutoplay);
+			break;
+			case "wistia":
+				g_objPlayer.playWistia(selectedItem.videoid, isAutoplay);
+			break;			
+			case "soundcloud":
+				g_objPlayer.playSoundCloud(selectedItem.trackid, isAutoplay);
+			break;
+		}
+		
+		g_temp.isFirstChange = false;
+		
+	}
+	
+	
+	/**
+	 * on video ended playing
+	 */
+	function onVideoEnded(){
+		
+		if(g_options.theme_next_video_onend == true)
+			g_gallery.nextItem();
+				
+	}
+	
+	
+	/**
+	 * init buttons functionality and events
+	 */
+	function initEvents(){
+		
+		g_objGallery.on(g_gallery.events.SIZE_CHANGE, onSizeChange);
+		g_objGallery.on(g_gallery.events.ITEM_CHANGE, onItemChange);
+		
+		g_objPlayer.initEvents();
+		
+		if(g_options.theme_next_video_onend == true)
+			jQuery(g_objPlayer).on(g_objPlayer.events.VIDEO_ENDED, onVideoEnded);
+		
+		//init buttons panel events:		
+		if(g_objButtonsPanel){
+			
+			g_functions.setButtonMobileReady(g_buttonPrev);
+			g_gallery.setPrevButton(g_buttonPrev);
+			
+			g_functions.setButtonMobileReady(g_buttonNext);
+			g_gallery.setNextButton(g_buttonNext);
+						
+		}
+		
+	}
+	
+	/**
+	 * destroy the theme
+	 */
+	this.destroy = function(){
+		
+		g_objGallery.off(g_gallery.events.SIZE_CHANGE);
+		g_objGallery.off(g_gallery.events.ITEM_CHANGE);
+		g_objPlayer.destroy();
+		if(g_objButtonsPanel){
+			g_functions.destroyButton(g_buttonPrev);
+			g_functions.destroyButton(g_buttonNext);
+		}
+		
+		if(g_options.theme_next_video_onend == true)
+			jQuery(g_objPlayer).off(g_objPlayer.events.VIDEO_ENDED);
+		
+		if(g_objPanel)
+			g_objPanel.destroy();
+	}
+	
+	
+	/**
+	 * run the theme setting
+	 */
+	this.run = function(){
+		
+		runTheme();
+	}
+	
+	
+	/**
+	 * init 
+	 */
+	this.init = function(gallery, customOptions){
+				
+		initTheme(gallery, customOptions);
+	}
+	
+	
+}
+

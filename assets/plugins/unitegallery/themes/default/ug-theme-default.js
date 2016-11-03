@@ -1,1 +1,681 @@
-function UGTheme_default(){function e(e,t){P=e,R=jQuery.extend(R,z),R=jQuery.extend(R,t),R=jQuery.extend(R,j),n(),P.setOptions(R),1==R.theme_load_panel&&(w=new UGStripPanel,w.init(e,R)),1==R.theme_load_slider&&P.initSlider(R),x=e.getObjects(),v=jQuery(e),E=x.g_objWrapper,1==R.theme_load_slider&&(T=x.g_objSlider),1==R.theme_enable_text_panel&&(I=new UGTextPanel,I.init(P,R,"slider"))}function t(){l(),i(),b()}function n(){var e={slider_textpanel_css_title:{},slider_textpanel_css_description:{}};switch(R=jQuery.extend(e,R),R.slider_textpanel_css_title["text-align"]=R.theme_text_align,R.slider_textpanel_css_description["text-align"]=R.theme_text_align,R.theme_text_type){case"title":R.slider_textpanel_enable_title=!0,R.slider_textpanel_enable_description=!1;break;case"both":R.slider_textpanel_enable_title=!0,R.slider_textpanel_enable_description=!0;break;default:case"description":}}function l(){E.addClass("ug-theme-default");var e="";e+="<div class='ug-theme-panel'>";var t="ug-default-button-fullscreen",n="ug-default-button-play",l=".ug-default-button-fullscreen",i=".ug-default-button-play";I||(t="ug-default-button-fullscreen-single",n="ug-default-button-play-single",l=".ug-default-button-fullscreen-single",i=".ug-default-button-play-single"),1==R.theme_enable_fullscreen_button&&(e+="<div class='"+t+"'></div>"),1==R.theme_enable_play_button&&(e+="<div class='"+n+"'></div>"),R.theme_enable_hidepanel_button&&(e+="<div class='ug-default-button-hidepanel'><div class='ug-default-button-hidepanel-bg'></div> <div class='ug-default-button-hidepanel-tip'></div></div>"),e+="</div>",E.append(e),O=E.children(".ug-theme-panel"),1==R.theme_enable_fullscreen_button&&(y=O.children(l)),1==R.theme_enable_play_button&&(S=O.children(i)),1==R.theme_enable_hidepanel_button&&(H=O.children(".ug-default-button-hidepanel")),w.setHtml(O),I&&I.appendHTML(O),T&&T.setHtml()}function i(){R.theme_load_panel&&(a(),d()),T&&(_(),T.run())}function a(){var e=P.getSize(),t=e.width;w.setOrientation("bottom"),w.setWidth(t),w.run();var n=w.getSize(),l=n.height;if(I){if(l+=j.slider_textpanel_height,H){var i=H.outerHeight();l+=i}}else{var a=0;H&&(a=Math.max(H.outerHeight(),a)),y&&(a=Math.max(y.outerHeight(),a)),S&&(a=Math.max(S.outerHeight(),a)),l+=a}C.setElementSize(O,t,l);var d=w.getElement();if(C.placeElement(d,"left","bottom"),H){var _=H.children(".ug-default-button-hidepanel-tip");if(C.placeElement(_,"center","middle"),I){var o=H.children(".ug-default-button-hidepanel-bg"),r=I.getOption("textpanel_bg_opacity");o.fadeTo(0,r);var u=I.getOption("textpanel_bg_color");o.css({"background-color":u})}}var s=0,p=0;if(H&&(p=i),y&&(C.placeElement(y,"right","top",0,p),s=y.outerWidth()),S){var h=p;I||h++,C.placeElement(S,"right","top",s,h),s+=S.outerWidth()}if(I){var c={};c.slider_textpanel_padding_right=R.theme_text_padding_right+s,c.slider_textpanel_padding_left=R.theme_text_padding_left,H&&(c.slider_textpanel_margin=i),I.setOptions(c),I.positionPanel(),I.run()}if(H)if(I)C.placeElement(H,"left","top");else{var g=d.outerHeight();C.placeElement(H,"left","bottom",0,g)}}function d(){if(A.isPanelHidden||1==o()){var e=h();C.placeElement(O,0,e),A.isPanelHidden=!0}else C.placeElement(O,0,"bottom")}function _(){var e=0,t=0,n=P.getHeight(),l=n;if(w&&0==s()){var i=w.getSize();l=n-i.height}var a=P.getWidth();T.setSize(a,l),T.setPosition(t,e)}function o(){if(!R.theme_hide_panel_under_width)return!1;var e=jQuery(window).width(),t=R.theme_hide_panel_under_width;return t>=e?!0:!1}function r(){if(!R.theme_hide_panel_under_width)return!1;var e=o();1==e?c(!0):g(!0)}function u(){i(),r()}function s(){return A.isPanelHidden}function p(e,t){var n={top:e+"px"};O.stop(!0).animate(n,{duration:300,easing:"easeInOutQuad",queue:!1,complete:function(){t&&t()}})}function h(){var e=E.height(),t=e;if(H){var n=C.getElementSize(H);t-=n.bottom}return t}function c(e){if(!e)var e=!1;if(1==s())return!1;var t=h();1==e?C.placeElement(O,0,t):p(t,_),H&&H.addClass("ug-button-hidden-mode"),A.isPanelHidden=!0}function g(e){if(!e)var e=!1;if(0==s())return!1;var t=E.height(),n=O.outerHeight(),l=t-n;1==e?C.placeElement(O,0,l):p(l,_),H&&H.removeClass("ug-button-hidden-mode"),A.isPanelHidden=!1}function f(e){return e.stopPropagation(),e.stopImmediatePropagation(),0==C.validateClickTouchstartEvent(e.type)?!0:void(1==s()?g():c())}function m(){P.showDisabledOverlay()}function b(){v.on(P.events.SIZE_CHANGE,u),v.on(P.events.GALLERY_BEFORE_REQUEST_ITEMS,m),S&&(C.addClassOnHover(S,"ug-button-hover"),P.setPlayButton(S)),y&&(C.addClassOnHover(y,"ug-button-hover"),P.setFullScreenToggleButton(y)),H&&(C.setButtonMobileReady(H),C.addClassOnHover(H,"ug-button-hover"),H.on("click touchstart",f)),v.on(P.events.SLIDER_ACTION_START,function(){O.css("z-index","1"),T.getElement().css("z-index","11")}),v.on(P.events.SLIDER_ACTION_END,function(){O.css("z-index","11"),T.getElement().css("z-index","1")})}var v,x,E,y,S,H,T,O,w,I,P=new UniteGalleryMain,C=new UGFunctions,R={theme_load_slider:!0,theme_load_panel:!0,theme_enable_fullscreen_button:!0,theme_enable_play_button:!0,theme_enable_hidepanel_button:!0,theme_enable_text_panel:!0,theme_text_padding_left:20,theme_text_padding_right:5,theme_text_align:"left",theme_text_type:"description",theme_hide_panel_under_width:480},z={slider_controls_always_on:!0,slider_zoompanel_align_vert:"top",slider_zoompanel_offset_vert:12,slider_textpanel_padding_top:0,slider_textpanel_enable_title:!1,slider_textpanel_enable_description:!0,slider_vertical_scroll_ondrag:!0,strippanel_background_color:"#232323",strippanel_padding_top:10},j={slider_enable_text_panel:!1,slider_enable_play_button:!1,slider_enable_fullscreen_button:!1,slider_enable_text_panel:!1,slider_textpanel_height:50,slider_textpanel_align:"top"},A={isPanelHidden:!1};this.destroy=function(){v.off(P.events.SIZE_CHANGE),v.off(P.events.GALLERY_BEFORE_REQUEST_ITEMS),S&&P.destroyPlayButton(S),y&&P.destroyFullscreenButton(y),H&&C.destroyButton(H),v.off(P.events.SLIDER_ACTION_START),v.off(P.events.SLIDER_ACTION_END),T&&T.destroy(),w&&w.destroy(),I&&I.destroy()},this.run=function(){t()},this.init=function(t,n){e(t,n)}}"undefined"!=typeof g_ugFunctions?g_ugFunctions.registerTheme("default"):jQuery(document).ready(function(){g_ugFunctions.registerTheme("default")});
+
+if(typeof g_ugFunctions != "undefined")
+	g_ugFunctions.registerTheme("default");
+else 
+	jQuery(document).ready(function(){g_ugFunctions.registerTheme("default")});
+
+
+/**
+ * Default gallery theme
+ */
+function UGTheme_default(){
+
+	var t = this;
+	var g_gallery = new UniteGalleryMain(), g_objGallery, g_objects, g_objWrapper; 
+	var g_objButtonFullscreen, g_objButtonPlay, g_objButtonHidePanel;
+	var g_objSlider, g_objPanel, g_objStripPanel, g_objTextPanel;
+	var g_functions = new UGFunctions();
+	
+	//theme options
+	var g_options = {
+			theme_load_slider:true,					//this option for debugging only
+			theme_load_panel:true,					//this option for debugging only
+				
+			theme_enable_fullscreen_button: true,	//show, hide the theme fullscreen button. The position in the theme is constant
+			theme_enable_play_button: true,			//show, hide the theme play button. The position in the theme is constant
+			theme_enable_hidepanel_button: true,	//show, hide the hidepanel button
+			theme_enable_text_panel: true,			//enable the panel text panel. 
+			
+			theme_text_padding_left: 20,			//left padding of the text in the textpanel
+			theme_text_padding_right: 5,			//right paddin of the text in the textpanel
+			theme_text_align: "left",				//left, center, right - the align of the text in the textpanel
+			theme_text_type: "description",			//title, description, both - text that will be shown on the text panel, title or description or both
+			
+			theme_hide_panel_under_width: 480		//hide panel under certain browser width, if null, don't hide
+	};
+	
+	
+	//default item options:
+	var g_defaults = {
+		
+		//slider options:
+		slider_controls_always_on: true,
+		slider_zoompanel_align_vert: "top",
+		slider_zoompanel_offset_vert: 12,
+		
+		//textpanel options: 
+		slider_textpanel_padding_top: 0,
+		slider_textpanel_enable_title: false,
+		slider_textpanel_enable_description: true,
+		slider_vertical_scroll_ondrag: true,
+		
+		//strippanel options
+		strippanel_background_color:"#232323",
+		strippanel_padding_top:10
+	};
+	
+		
+	//options that could not be changed by user
+	var g_mustOptions = {
+		
+		slider_enable_text_panel: false,
+		slider_enable_play_button:false,
+		slider_enable_fullscreen_button: false,
+		
+		//text panel options
+		slider_enable_text_panel: false,		
+		slider_textpanel_height: 50,
+		slider_textpanel_align:"top",
+	};
+	
+	
+	var g_temp = {
+		isPanelHidden: false
+	};
+	
+	
+	/**
+	 * init the theme
+	 */
+	function initTheme(gallery, customOptions){
+		
+		g_gallery = gallery;
+		
+		g_options = jQuery.extend(g_options, g_defaults);
+		g_options = jQuery.extend(g_options, customOptions);
+		g_options = jQuery.extend(g_options, g_mustOptions);
+		
+		modifyOptions();
+		
+		//set gallery options
+		g_gallery.setOptions(g_options);
+		
+		//include gallery elements
+		if(g_options.theme_load_panel == true){
+			g_objStripPanel = new UGStripPanel();
+			g_objStripPanel.init(gallery, g_options);
+		}
+		
+		if(g_options.theme_load_slider == true)
+			g_gallery.initSlider(g_options);
+		
+		g_objects = gallery.getObjects();
+				
+		//get some objects for local use
+		g_objGallery = jQuery(gallery);		
+		g_objWrapper = g_objects.g_objWrapper;
+		
+		if(g_options.theme_load_slider == true)
+			g_objSlider = g_objects.g_objSlider;
+		
+		//init text panel
+		if(g_options.theme_enable_text_panel == true){
+			g_objTextPanel = new UGTextPanel();
+			g_objTextPanel.init(g_gallery, g_options, "slider");
+		}
+		
+	}
+	
+	
+	/**
+	 * run the theme
+	 */
+	function runTheme(){
+		
+		setHtml();
+		
+		initAndPlaceElements();
+				
+		initEvents();
+	}
+	
+	
+	/**
+	 * modify some options before implimenting
+	 */
+	function modifyOptions(){
+		
+		var moreOptions = {
+				slider_textpanel_css_title:{},						//additional css of the title
+				slider_textpanel_css_description:{}					//additional css of the description
+		};
+		
+		g_options = jQuery.extend(moreOptions, g_options);
+		
+		g_options.slider_textpanel_css_title["text-align"] = g_options.theme_text_align;
+		g_options.slider_textpanel_css_description["text-align"] = g_options.theme_text_align;
+		
+		switch(g_options.theme_text_type){
+			case "title":
+				g_options.slider_textpanel_enable_title = true;
+				g_options.slider_textpanel_enable_description = false;				
+			break;
+			case "both":
+				g_options.slider_textpanel_enable_title = true;
+				g_options.slider_textpanel_enable_description = true;
+			break;
+			default:
+			case "description":		//the description is the default
+		}
+				
+	}
+	
+
+	
+	/**
+	 * set gallery html elements
+	 */
+	function setHtml(){
+		
+		//add html elements
+		g_objWrapper.addClass("ug-theme-default");
+		
+		var htmlAdd = "";
+		
+		//add panel
+		htmlAdd += "<div class='ug-theme-panel'>";
+		
+		var classButtonFullscreen = 'ug-default-button-fullscreen';
+		var classButtonPlay = 'ug-default-button-play';
+		var classCaptureButtonFullscreen = '.ug-default-button-fullscreen';
+		var classCaptureButtonPlay = '.ug-default-button-play';
+		
+		
+		if(!g_objTextPanel){	//take the buttons from default theme
+			classButtonFullscreen = 'ug-default-button-fullscreen-single';
+			classButtonPlay = 'ug-default-button-play-single';
+			classCaptureButtonFullscreen = '.ug-default-button-fullscreen-single';
+			classCaptureButtonPlay = '.ug-default-button-play-single';
+		}
+		
+		//add fullscreen button to the panel
+		if(g_options.theme_enable_fullscreen_button == true)
+			htmlAdd += "<div class='"+classButtonFullscreen+"'></div>";
+		
+		//add play button to the panel
+		if(g_options.theme_enable_play_button == true)
+			htmlAdd += "<div class='"+classButtonPlay+"'></div>";
+		
+		//add hide panel button
+		if(g_options.theme_enable_hidepanel_button)
+			htmlAdd += "<div class='ug-default-button-hidepanel'><div class='ug-default-button-hidepanel-bg'></div> <div class='ug-default-button-hidepanel-tip'></div></div>";
+		
+		htmlAdd += "</div>";
+		
+		g_objWrapper.append(htmlAdd);
+		
+		//set elements
+		g_objPanel = g_objWrapper.children(".ug-theme-panel");
+		
+		if(g_options.theme_enable_fullscreen_button == true)
+			g_objButtonFullscreen = g_objPanel.children(classCaptureButtonFullscreen);
+		
+		if(g_options.theme_enable_play_button == true)
+			g_objButtonPlay = g_objPanel.children(classCaptureButtonPlay);
+
+		if(g_options.theme_enable_hidepanel_button == true)
+			g_objButtonHidePanel = g_objPanel.children(".ug-default-button-hidepanel");
+		
+		//set html strip panel to the panel
+		g_objStripPanel.setHtml(g_objPanel);
+		
+		//set text panel html to the panel
+		if(g_objTextPanel)
+			g_objTextPanel.appendHTML(g_objPanel);
+		
+		//set slider html
+		if(g_objSlider)
+			g_objSlider.setHtml();
+		
+	}
+	
+	
+	/**
+	 * init all the theme's elements and set them to their places 
+	 * according gallery's dimentions.
+	 * this function should work on resize too.
+	 */
+	function initAndPlaceElements(){
+		
+		//create and place thumbs panel:
+		if(g_options.theme_load_panel){
+			initPanel();
+			placePanel();
+		}
+		
+		//place the slider
+		if(g_objSlider){	
+			placeSlider();
+			g_objSlider.run();
+		}
+		
+	}
+	
+	
+	/**
+	 * init size of the thumbs panel
+	 */
+	function initPanel(){
+		
+		var objGallerySize = g_gallery.getSize();
+		var galleryWidth = objGallerySize.width;	
+		
+		//init srip panel width
+		g_objStripPanel.setOrientation("bottom");
+		g_objStripPanel.setWidth(galleryWidth);
+		g_objStripPanel.run();
+		
+		//set panel size
+		var objStripPanelSize = g_objStripPanel.getSize();		
+		var panelHeight = objStripPanelSize.height;
+		
+		if(g_objTextPanel){
+			panelHeight += g_mustOptions.slider_textpanel_height;
+			
+			if(g_objButtonHidePanel){
+				var hideButtonHeight = g_objButtonHidePanel.outerHeight();
+				panelHeight += hideButtonHeight;
+			}		
+		}
+		else{	
+			var maxButtonsHeight = 0;
+			
+			if(g_objButtonHidePanel)
+				maxButtonsHeight = Math.max(g_objButtonHidePanel.outerHeight(), maxButtonsHeight);
+			
+			if(g_objButtonFullscreen)
+				maxButtonsHeight = Math.max(g_objButtonFullscreen.outerHeight(), maxButtonsHeight);
+			
+			if(g_objButtonPlay)
+				maxButtonsHeight = Math.max(g_objButtonPlay.outerHeight(), maxButtonsHeight);
+			
+			panelHeight += maxButtonsHeight;
+		
+		}
+		
+		g_functions.setElementSize(g_objPanel, galleryWidth, panelHeight);
+		
+		//position strip panel
+		var stripPanelElement = g_objStripPanel.getElement();
+			g_functions.placeElement(stripPanelElement, "left", "bottom");
+		
+		//init hide panel button
+		if(g_objButtonHidePanel){
+			var buttonTip = g_objButtonHidePanel.children(".ug-default-button-hidepanel-tip");
+			g_functions.placeElement(buttonTip, "center", "middle");
+			
+			//set opacity and bg color from the text panel			
+			if(g_objTextPanel){				
+				var objHideButtonBG = g_objButtonHidePanel.children(".ug-default-button-hidepanel-bg");
+				
+				var hidePanelOpacity = g_objTextPanel.getOption("textpanel_bg_opacity");				
+				objHideButtonBG.fadeTo(0, hidePanelOpacity);
+
+				var bgColor = g_objTextPanel.getOption("textpanel_bg_color");				
+				objHideButtonBG.css({"background-color":bgColor});
+			}
+			
+		}
+		
+		//position buttons on the text panel:
+		var paddingPlayButton = 0;
+		var panelButtonsOffsetY = 0;
+		if(g_objButtonHidePanel){
+			panelButtonsOffsetY = hideButtonHeight;
+		}
+		
+		if(g_objButtonFullscreen){
+			g_functions.placeElement(g_objButtonFullscreen, "right", "top",0 , panelButtonsOffsetY);
+			paddingPlayButton = g_objButtonFullscreen.outerWidth();
+		}
+		
+		if(g_objButtonPlay){
+			var buttonPlayOffsetY = panelButtonsOffsetY;
+			if(!g_objTextPanel)
+				buttonPlayOffsetY++; 
+				
+			g_functions.placeElement(g_objButtonPlay, "right", "top", paddingPlayButton, buttonPlayOffsetY);			
+			paddingPlayButton += g_objButtonPlay.outerWidth();
+		}
+		
+		//run the text panel
+		if(g_objTextPanel){
+			
+			var textPanelOptions = {};
+			textPanelOptions.slider_textpanel_padding_right = g_options.theme_text_padding_right + paddingPlayButton;
+			textPanelOptions.slider_textpanel_padding_left = g_options.theme_text_padding_left;					
+			
+			if(g_objButtonHidePanel){
+				textPanelOptions.slider_textpanel_margin = hideButtonHeight;
+			}
+			
+			g_objTextPanel.setOptions(textPanelOptions);
+			
+			g_objTextPanel.positionPanel();			
+			g_objTextPanel.run();
+		}
+		
+		//place hide panel button
+		if(g_objButtonHidePanel){
+						
+			if(g_objTextPanel)		//place at the beginning of hte panel
+				g_functions.placeElement(g_objButtonHidePanel,"left", "top");
+			
+			else{		//place above the strip panel
+				var stripPanelHeight = stripPanelElement.outerHeight();
+				g_functions.placeElement(g_objButtonHidePanel,"left", "bottom", 0, stripPanelHeight);
+			}
+		}
+		
+	}
+	
+	
+	/**
+	 * place thumbs panel according the settings
+	 */
+	function placePanel(){
+		
+		if(g_temp.isPanelHidden || isPanelNeedToHide() == true){
+			
+			//place panel hidden			
+			var newPanelPosY = getHiddenPanelPosition();
+			g_functions.placeElement(g_objPanel, 0, newPanelPosY);
+			g_temp.isPanelHidden = true;
+		
+		}else		//place panel normal
+			g_functions.placeElement(g_objPanel, 0, "bottom");
+	
+		
+	} 
+	
+	
+	/**
+	 * place the slider according the thumbs panel size and position
+	 */
+	function placeSlider(){
+		
+		 var sliderTop = 0;
+		 var sliderLeft = 0;
+		 var galleryHeight = g_gallery.getHeight();
+		 var sliderHeight = galleryHeight;
+		 
+		 if(g_objStripPanel && isPanelHidden() == false){
+			 var panelSize = g_objStripPanel.getSize();
+			 sliderHeight = galleryHeight - panelSize.height;
+		 }
+		 
+		 var sliderWidth = g_gallery.getWidth();
+		 
+		 //set parent container the panel
+		 g_objSlider.setSize(sliderWidth, sliderHeight);
+		 g_objSlider.setPosition(sliderLeft, sliderTop);		
+	}
+	
+	/**
+	 * check if need to hide the panel according the options.
+	 */
+	function isPanelNeedToHide(){
+		
+		if(!g_options.theme_hide_panel_under_width)
+			return(false);
+		
+		var windowWidth = jQuery(window).width();
+		var hidePanelValue = g_options.theme_hide_panel_under_width;
+		
+		if(windowWidth <= hidePanelValue)
+			return(true);
+			
+		return(false);
+	}
+	
+	/**
+	 * check if need to hide or show panel according the theme_hide_panel_under_width option
+	 */
+	function checkHidePanel(){
+		
+		//check hide panel:
+		if(!g_options.theme_hide_panel_under_width)
+			return(false);
+		
+			var needToHide = isPanelNeedToHide();
+			
+			if(needToHide == true)
+				hidePanel(true);
+			else
+				showPanel(true);
+	}
+	
+	
+	/**
+	 * on gallery size change - resize the theme.
+	 */
+	function onSizeChange(){
+		
+		initAndPlaceElements();
+		
+		checkHidePanel();
+	}
+	
+	
+	/**
+	 * get if the panel is hidden
+	 */
+	function isPanelHidden(){
+		
+		return(g_temp.isPanelHidden);
+	}
+	
+	
+	/**
+	 * place panel with some animation
+	 */
+	function placePanelAnimation(panelY, functionOnComplete){
+		
+		var objCss  = {top: panelY + "px"};
+		
+		g_objPanel.stop(true).animate(objCss ,{
+			duration: 300,
+			easing: "easeInOutQuad",
+			queue: false,
+			complete: function(){
+				if(functionOnComplete)
+					functionOnComplete();
+			}
+		});
+		
+	}
+
+	
+	/**
+	 * get position of the hidden panel
+	 */
+	function getHiddenPanelPosition(){
+		
+		var galleryHeight = g_objWrapper.height();
+		var newPanelPosY = galleryHeight;
+		if(g_objButtonHidePanel){
+			var objButtonSize = g_functions.getElementSize(g_objButtonHidePanel);
+			newPanelPosY -= objButtonSize.bottom;
+		}
+		
+		return(newPanelPosY);
+	}
+	
+	
+	/**
+	 * hide the panel
+	 */
+	function hidePanel(noAnimation){
+		
+		if(!noAnimation)
+			var noAnimation = false;
+		
+		if(isPanelHidden() == true)
+			return(false);
+				
+		var newPanelPosY = getHiddenPanelPosition();
+		
+		if(noAnimation == true)
+			g_functions.placeElement(g_objPanel, 0, newPanelPosY);
+		else
+			placePanelAnimation(newPanelPosY, placeSlider); 
+		
+		if(g_objButtonHidePanel)
+			g_objButtonHidePanel.addClass("ug-button-hidden-mode");
+		
+		g_temp.isPanelHidden = true;
+		
+	}
+	
+	
+	/**
+	 * show the panel
+	 */
+	function showPanel(noAnimation){
+		
+		if(!noAnimation)
+			var noAnimation = false;
+		
+		if(isPanelHidden() == false)
+			return(false);
+		
+		var galleryHeight = g_objWrapper.height();
+		var panelHeight = g_objPanel.outerHeight();
+		
+		var newPanelPosY = galleryHeight - panelHeight;
+		
+		if(noAnimation == true)
+			g_functions.placeElement(g_objPanel, 0, newPanelPosY);
+		else
+			placePanelAnimation(newPanelPosY, placeSlider);
+		
+		if(g_objButtonHidePanel)
+			g_objButtonHidePanel.removeClass("ug-button-hidden-mode");
+		
+		g_temp.isPanelHidden = false;
+	}
+	
+	
+	/**
+	 * on hide panel click
+	 */
+	function onHidePanelClick(event){
+		
+		event.stopPropagation();
+		event.stopImmediatePropagation();
+		
+		if(g_functions.validateClickTouchstartEvent(event.type) == false)
+			return(true);
+		
+		if(isPanelHidden() == true)
+			showPanel();
+		else
+			hidePanel();
+	}
+
+	/**
+	 * before items request: hide items, show preloader
+	 */
+	function onBeforeReqestItems(){
+	
+		g_gallery.showDisabledOverlay();
+	
+	}
+	
+	
+	/**
+	 * init buttons functionality and events
+	 */
+	function initEvents(){
+						
+		g_objGallery.on(g_gallery.events.SIZE_CHANGE,onSizeChange);
+		g_objGallery.on(g_gallery.events.GALLERY_BEFORE_REQUEST_ITEMS, onBeforeReqestItems);
+		
+		//set the panel buttons
+		if(g_objButtonPlay){
+			g_functions.addClassOnHover(g_objButtonPlay, "ug-button-hover");
+			g_gallery.setPlayButton(g_objButtonPlay);
+		}
+		
+		//init fullscreen button
+		if(g_objButtonFullscreen){
+			g_functions.addClassOnHover(g_objButtonFullscreen, "ug-button-hover");
+			g_gallery.setFullScreenToggleButton(g_objButtonFullscreen);
+		}
+		
+		//init hide panel button
+		if(g_objButtonHidePanel){
+			g_functions.setButtonMobileReady(g_objButtonHidePanel);
+			g_functions.addClassOnHover(g_objButtonHidePanel, "ug-button-hover");
+			g_objButtonHidePanel.on("click touchstart", onHidePanelClick);
+		}
+		
+		//on gallery media player events, bring the element to front
+		g_objGallery.on(g_gallery.events.SLIDER_ACTION_START, function(){
+			
+			//set slider to front
+			g_objPanel.css("z-index","1");
+			g_objSlider.getElement().css("z-index","11");
+		});
+		
+		g_objGallery.on(g_gallery.events.SLIDER_ACTION_END, function(){
+			
+			//set the panel to front
+			g_objPanel.css("z-index","11");
+			g_objSlider.getElement().css("z-index","1");
+		});
+		
+	}
+	
+	/**
+	 * destroy the gallery events and objects
+	 */
+	this.destroy = function(){
+		
+		g_objGallery.off(g_gallery.events.SIZE_CHANGE);
+		g_objGallery.off(g_gallery.events.GALLERY_BEFORE_REQUEST_ITEMS);
+		
+		//set the panel buttons
+		if(g_objButtonPlay)
+			g_gallery.destroyPlayButton(g_objButtonPlay);
+		
+		//init fullscreen button
+		if(g_objButtonFullscreen)
+			g_gallery.destroyFullscreenButton(g_objButtonFullscreen);
+			
+		//init hide panel button
+		if(g_objButtonHidePanel)
+			g_functions.destroyButton(g_objButtonHidePanel);
+		
+		g_objGallery.off(g_gallery.events.SLIDER_ACTION_START);
+		g_objGallery.off(g_gallery.events.SLIDER_ACTION_END);
+		
+		if(g_objSlider)
+			g_objSlider.destroy();
+		
+		if(g_objStripPanel)
+			g_objStripPanel.destroy();
+		
+		if(g_objTextPanel)
+			g_objTextPanel.destroy();
+		
+	}
+	
+	
+	/**
+	 * run the theme setting
+	 */
+	this.run = function(){
+		
+		runTheme();
+	}
+	
+	
+	/**
+	 * init 
+	 */
+	this.init = function(gallery, customOptions){
+		initTheme(gallery, customOptions);
+	}
+	
+}
