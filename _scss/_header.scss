@@ -9,10 +9,10 @@
 
 #logo-text {
   color: #fff;
-  font-size: 5rem;
+  font-size: 7rem;
   display: block;
-  margin-top: 15px;
-  line-height: 5rem;
+  margin-top: 30px;
+  line-height: 8rem;
   text-shadow: 3px 3px #333333;
 }
 
@@ -31,6 +31,27 @@
     }
 }
 
+@media (max-width:921px) {
+    #header-sub {
+      #logo-text {
+        font-size: 5rem;
+      }
+  }
+}
+
+@media (max-width:737px) {
+  #header {
+    #logo-text {
+      margin-top: 15px;
+      line-height: 5rem;
+    }
+
+    #logo-main {
+      margin-top: -15px;
+    }
+  }
+}
+
 @media (max-width:767px) {
   #logo-text {
     font-size: 3rem;
@@ -40,6 +61,22 @@
       margin-top: -55px;
       margin-left: 60px;
     }
+  }
+}
+
+@media (max-width:769px) {
+    #header-sub {
+      #logo-text {
+        font-size: 5rem;
+      }
+  }
+}
+
+@media (max-width:420px) {
+    #header-sub {
+      #logo-text {
+        font-size: 3rem;
+      }
   }
 }
 

@@ -4,7 +4,15 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>{{ page.title }} - {{ site.title }}</title>
+    <meta name="description" content="{{ site.description }}"/>
+    <link rel="canonical" href="http://andreasilva.design/" />
+    <title>
+      {% if page.title == 'Home' %}
+        {{ site.title }} - {{ page.title }}
+      {% else %}
+        {{ page.title }} - {{ site.title }}
+      {% endif %}
+    </title>
 
     <!-- JQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
