@@ -18,6 +18,10 @@
       {% endif %}
     </title>
 
+    <!--[if lt IE 9]>
+      {% include olderIE.html %}
+    <![endif]-->
+
     <!-- JQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 
@@ -42,11 +46,8 @@
     {% include googleAnalytics.html %}
   </head>
   <body>
-
     {% include navigation.html %}
-    
     {{ content }}
-
     {% include footer.html %}
 
     <!-- Custom Scripts -->
