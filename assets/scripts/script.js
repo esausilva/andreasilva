@@ -48,7 +48,7 @@ $(document).ready(function ($) {
     $('#DesignLnk')[0].click();
   });
 
-  $('#Art').click(function () {
+  $('#FineArts').click(function () {
     $('#ArtLnk')[0].click();
   });
 

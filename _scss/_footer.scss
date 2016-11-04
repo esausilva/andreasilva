@@ -1,11 +1,17 @@
 footer {
   height: 100px;
-  color: #fff;
-  background-color: #2B2B2B;
+  color: #545353;
+  background-color: #FBFAF2;
+  border-top: 1px solid #545353;
   position: absolute;
   right: 0;
   bottom: 0;
   left: 0;
   padding: 1rem;
   text-align: center;
+
+  i {
+    color: #F90505;
+    margin-top: 15px;
+  }
 }
