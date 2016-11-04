@@ -87,7 +87,9 @@ $(document).ready(function ($) {
   }
 
   //ScrollReveal
-  if (detectIE() > 9) {
+  if (detectIE() > 9 || detectIE() == false) {
     window.sr = ScrollReveal().reveal('#sr', { duration: 1000, mobile: true, origin: 'top', scale: 1 });
+  } else {
+    $('#sr').css({"visibility":"visible"});
   }
 });
