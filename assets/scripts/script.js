@@ -44,11 +44,11 @@ $(document).ready(function ($) {
   });
 
   // ===== Assign links to Feature Images
-  $('#Design').click(function () {
+  $('#GraphicDesign').click(function () {
     $('#DesignLnk')[0].click();
   });
 
-  $('#FineArts').click(function () {
+  $('#FineArt').click(function () {
     $('#ArtLnk')[0].click();
   });
 

@@ -17,7 +17,7 @@
 }
 
 #logo-text {
-  color: #fff;
+  color: #F9F7ED;
   font-size: 7rem;
   display: block;
   margin-top: 30px;
@@ -78,6 +78,12 @@
       #logo-text {
         font-size: 5rem;
       }
+  }
+}
+
+@media (min-width:768px) {
+  #logo-text {
+    font-size: 6rem;
   }
 }
 
