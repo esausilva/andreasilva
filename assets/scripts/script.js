@@ -15,7 +15,7 @@ $(document).ready(function ($) {
       $('#header').height(headerHeight);
       $('#logo-main').height(logoMainHeight);
   } else {
-      headerHeight = parseFloat(windowObj.height()) * parseFloat(.91);
+      headerHeight = parseFloat(windowObj.height()) * parseFloat(.92);
       logoMainHeight = headerHeight - 238;
       
       $('#header').height(headerHeight);
@@ -32,7 +32,7 @@ $(document).ready(function ($) {
       $('#logo-main').height(logoMainHeight);
     } else {
       if (resizeCount > 0) {
-        headerHeight = parseFloat(windowObj.height()) * parseFloat(.91);
+        headerHeight = parseFloat(windowObj.height()) * parseFloat(.92);
         logoMainHeight = headerHeight - 238;
 
         $('#header').height(headerHeight);
@@ -59,4 +59,7 @@ $(document).ready(function ($) {
   $('#Animation').click(function () {
     $('#AnimationLnk')[0].click();
   });
+
+  //ScrollReveal
+  window.sr = ScrollReveal().reveal('#sr', { duration: 1000, mobile: true, origin: 'top', scale: 1 });
 });
