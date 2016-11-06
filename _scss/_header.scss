@@ -5,24 +5,25 @@
   -o-background-size: cover;
   background-size: cover;*/
   padding-top: 40px;
-  background-color: #32191F;
+  background-color: $burgundydark;
 }
 
 #header {
   i {
-    color: #fff;
+    color: $white;
     font-size: 8rem;
     margin-top: 30px;
+    animation-delay: 1s;
+    animation-iteration-count: 4;
   }
 }
 
 #logo-text {
-  color: #F9F7ED;
+  color: $creamlight;
   font-size: 7rem;
   display: block;
   margin-top: 30px;
   line-height: 8rem;
-  //text-shadow: 3px 3px #000;
 }
 
 #header-sub {
@@ -58,6 +59,13 @@
     #logo-main {
       margin-top: -15px;
     }
+
+    i {
+      position: absolute;
+      bottom: -30px;
+      right: 10px;
+      font-size: 6rem;
+    }
   }
 }
 
@@ -92,6 +100,14 @@
       #logo-text {
         font-size: 3rem;
       }
+  }
+
+  #header {
+    i {
+      position: relative;
+      font-size: 8rem;
+      margin-top: 30px;
+    }
   }
 }
 

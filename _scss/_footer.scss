@@ -1,8 +1,8 @@
 footer {
   height: 100px;
-  color: #545353;
-  background-color: #F9F7ED;//#FBFAF2;
-  border-top: 1px solid #545353;
+  color: $gray;
+  background-color: $creamlight;
+  border-top: 1px solid $gray;
   position: absolute;
   right: 0;
   bottom: 0;
@@ -11,7 +11,8 @@ footer {
   text-align: center;
 
   i {
-    color: #F90505 !important;
+    color: $red !important;
     margin-top: 15px;
+    font-size: 2rem !important;
   }
 }

@@ -51,7 +51,7 @@
         width: 70%;
 
         &:hover {
-            box-shadow: 0 0 5px #fff;
+            box-shadow: 0 0 5px $white;
         }
     }
 }
@@ -64,7 +64,7 @@
   transition: all 0.4s ease-in;
   opacity: 0;
   filter: alpha(opacity=0);
-  color: #fff;
+  color: $white;
 }
 
 .hovereffect:hover p.info, .hovereffect:hover h2 {

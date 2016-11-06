@@ -1,5 +1,6 @@
-@import url('http://fonts.googleapis.com/css?family=Bree+Serif|Merriweather');
+@import url('http://fonts.googleapis.com/css?family=Merriweather');
 @import url('https://fonts.googleapis.com/css?family=Roboto:700');
+@import 'variables';
 
 html { 
     font-size: 62.5%; 
@@ -13,71 +14,17 @@ html {
 }
 
 body {
-    font-family: 'Century Gothic', sans-serif !important;
+    font-family: $fontprimary !important;
     position: relative;
     margin: 0;
     min-height: 94%;
     padding-bottom: 10rem;
-    background-color: #fff;
-    color: #4E4D4D;
+    background-color: $white;
+    color: $graydarker;
 }
 
 @import 'navigation';
 @import 'header';
 @import 'footer';
 @import 'featuredImgs';
-
-// ===== Content
-.content {
-  margin: 50px 0 0 0;
-}
-
-.content-sub {
-  margin-top: 50px;
-  margin-bottom: 10px;
-  font-size: 1.7rem;
-  line-height: 3rem;
-
-  h1 {
-    font-family: 'Roboto', sans-serif, 'Bree Serif';
-    font-size: 6rem;
-    color: #2B806B;
-  }
-}
-
-.nopadding {
-   padding: 0 !important;
-   margin: 0 !important;
-}
-
-.featured-imgs {
-  img {
-      width: 100%;
-    height: auto;
-  }
-  
-  div {
-      cursor: pointer;
-  }
-}
-
-#gallery {
-    margin-top: 20px;
-    margin-bottom: 20px;
-}
-
-#sr {
-  visibility: hidden;
-}
-
-/*#olderID {
-  height: 200px;
-  background-color: #333;
-  color: #fff;
-  text-align: center;
-  font-size: 4rem;
-  position: absolute;
-  z-index: 999;
-  width: 100%;
-  padding-top: 20px;
-}*/
+@import 'content';

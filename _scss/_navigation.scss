@@ -1,11 +1,5 @@
 /* Bootstrap NavBar Override http://work.smarchal.com/twbscolor/css/e74c3cc0392becf0f1ffbbbc0 */ 
 
-$bgDefault      : #802B40;
-$bgHighlight    : #701f32;
-$colDefault     : #ecf0f1;
-$colHighlight   : #ecf0f1;
-$dropDown       : false;
-
 .navbar-default {
     background-color: $bgDefault;
     border-color: $bgHighlight;
@@ -30,12 +24,12 @@ $dropDown       : false;
             }
             @if $dropDown {
                 > .dropdown-menu {
-                    background-color: $bgDefault;
+                    background-color: $white;
                     > li {
                         > a {
-                            color: $colDefault;
+                            color: $graydarker;
                             &:hover, &:focus {
-                                color: $colHighlight;
+                                color: $white;
                                 background-color: $bgHighlight;
                             }
                         }
@@ -89,9 +83,10 @@ $dropDown       : false;
 @media (max-width:767px) {
     .navbar-default .navbar-nav .open .dropdown-menu {
         > li > a {
-            color: $colDefault;
+            color: $graydarker;
             &:hover, &:focus {
-                color: $colHighlight;
+                color: $white;
+                background-color: $bgHighlight;
             }
         }
         > .active {
