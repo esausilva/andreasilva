@@ -1,11 +1,7 @@
 #header, #header-sub {
-  //background: url(../images/headerBg.jpg) #32191F no-repeat center center fixed; 
-  /*-webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;*/
+  background: url(../images/headerBg.png) $burgundydark no-repeat center center;
+  background-size: cover;
   padding-top: 40px;
-  background-color: $burgundydark;
 }
 
 #header {

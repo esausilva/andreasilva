@@ -10,7 +10,7 @@ title: Andrea Silva | Design
 email: esausilva85@gmail.com
 description: Andrea Silva Design showcases the work of graphic designer and artist Andrea Silva, including pieces in digital design, fine art, illustration, and more, located in the Rio Grande Valley. 
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "http://andreasilva.design/" # the base hostname & protocol for your site, e.g. http://example.com
+url: "http://andreasilva.design" # the base hostname & protocol for your site, e.g. http://example.com
 canonical: "http://andreasilva.design/"
 
 # Build settings
