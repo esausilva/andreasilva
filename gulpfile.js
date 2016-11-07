@@ -7,6 +7,7 @@ var cp          = require('child_process');
 var postcss     = require('gulp-postcss');
 var csswring    = require('csswring');
 var cssnano     = require('cssnano');
+var del         = require('del');
 
 var env = process.env.NODE_ENV || 'prod';
 var jekyll   = process.platform === 'win32' ? 'jekyll.bat' : 'jekyll';
@@ -73,6 +74,13 @@ gulp.task('sass', function () {
 gulp.task('watch', function () {
     gulp.watch('_scss/*.scss', ['sass']);
     gulp.watch(['./**/*.html', '_data/*.json', 'assets/scripts/*.js', 'assets/images/*.*'], ['jekyll-rebuild']);
+});
+
+/**
+ * Delete .publish directory
+ */
+gulp.task('clean', function () {
+    return del('.publish/**/*');
 });
 
 /**

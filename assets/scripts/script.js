@@ -1,46 +1,36 @@
 $(document).ready(function ($) {
   // ===== Resizing index header
   var windowObj = $(window);
-  var body = $('body');
   var logoMain = $('#logo-main');
-  var headerHeight;
   var logoMainHeight;
-  var resizeCount = 0;
 
-  //First resize if mobile
-  if (windowObj.height() < 420) {
-      headerHeight = parseFloat(windowObj.height()) * parseFloat(.81);
-      logoMainHeight = headerHeight - 100;
-      
-      $('#header').height(headerHeight);
-      $('#logo-main').height(logoMainHeight);
-  } else {
-      headerHeight = parseFloat(windowObj.height()) * parseFloat(.92);
-      logoMainHeight = headerHeight - 238;
-      
-      $('#header').height(headerHeight);
-      $('#logo-main').height(logoMainHeight);
+  function logoHeight(headerHeight) {
+    if (windowObj.height() < 420) {
+        logoMainHeight = headerHeight - 100;
+        
+        logoMain.height(logoMainHeight);
+    } else {
+        logoMainHeight = headerHeight - 238;
+        
+        logoMain.height(logoMainHeight);
+    }
+  }
+ 
+  function fullscreen(){
+    var navHeight = $('nav').height();
+    var headerHeight = windowObj.height() - (navHeight - 5);
+    $('#header').css({
+      width: windowObj.width(),
+      height: headerHeight
+    });
+
+    logoHeight(headerHeight - 35);
   }
 
-  //Resize when body changes height or mobile changes from portrait to landscape 
-  $(body).on("mresize", function () {
-    if (windowObj.height() < 420) {
-      headerHeight = parseFloat(windowObj.height()) * parseFloat(.81);
-      logoMainHeight = headerHeight - 100;
+  fullscreen();
 
-      $('#header').height(headerHeight);
-      $('#logo-main').height(logoMainHeight);
-    } else {
-      if (resizeCount > 0) {
-        headerHeight = parseFloat(windowObj.height()) * parseFloat(.92);
-        logoMainHeight = headerHeight - 238;
-
-        $('#header').height(headerHeight);
-        $('#logo-main').height(logoMainHeight);
-      }
-    }
-
-    resizeCount++;
+  windowObj.resize(function() {
+    fullscreen();         
   });
 
   // ===== Assign links to Feature Images
