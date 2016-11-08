@@ -50,6 +50,7 @@ $(document).ready(function ($) {
     $('#AnimationLnk')[0].click();
   });
 
+  //ScrollReveal
   function detectIE() {
       var ua = window.navigator.userAgent;
 
@@ -76,10 +77,23 @@ $(document).ready(function ($) {
       return false;
   }
 
-  //ScrollReveal
   if (detectIE() > 9 || detectIE() == false) {
     window.sr = ScrollReveal().reveal('#sr', { duration: 1000, mobile: true, origin: 'top', scale: 1 });
   } else {
     $('#sr').css({"visibility":"visible"});
   }
+
+  //Smooth scroll same page anchor
+  $('a[href*="#"]:not([href="#"])').click(function() {
+    if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
+      var target = $(this.hash);
+      target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+      if (target.length) {
+        $('html, body').animate({
+          scrollTop: target.offset().top
+        }, 1000);
+        return false;
+      }
+    }
+  });
 });
