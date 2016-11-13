@@ -10,16 +10,18 @@ canonical: http://andreasilva.design/portfolio/fine-art-and-illustration.html
   and to this day remains my favorite. With another life-long love of mine for reading, the application of art to the 
   written word through illustration has been a natural transition.</p>
 
-<div id="gallery" style="display:none;">
-  {% for image in site.data.portfolio.art %}
-    <a href="http://andreasilva.design">
-      <img alt="{{ image.alt }}"
-        src="{{ site.baseurl }}/assets/images/portfolio/art/{{ image.thumb }}"
-        data-image="{{ site.baseurl }}/assets/images/portfolio/art/{{ image.full }}"
-        data-description="{{ image.description }}"
-        style="display:none">
-    </a>
-  {% endfor %}
-</div>
 
-{% include uniteGallery.html %}
+<div class="galleries">
+  {% for image in site.data.galleries.art %}
+    <div class="gallery-container">
+      <div>
+        <a href="{{ site.baseurl }}/portfolio/{{ image.html }}">
+        <img alt="{{ image.alt }}"
+            src="{{ site.baseurl }}/assets/images/portfolio/{{ image.gallery }}/{{ image.image }}">
+        </a>
+      </div>
+      <p>{{ image.title }}</p>
+    </div>
+  {% endfor %}
+  <div class="clearfix"></div>
+</div>

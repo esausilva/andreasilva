@@ -1,0 +1,25 @@
+---
+layout: sub
+title: Allstuff Love Story - Fine Art & Illustration
+canonical: http://andreasilva.design/portfolio/fine-art-and-illustration/allstuff-love-story.html
+---
+<h1>Allstuff Love Story</h1>
+<hr />
+
+<p>I’ve had a love for art ever since childhood. Though I have enjoyed working in several mediums, watercolor has been 
+  and to this day remains my favorite. With another life-long love of mine for reading, the application of art to the 
+  written word through illustration has been a natural transition.</p>
+
+<div id="gallery" style="display:none;">
+  {% for image in site.data.portfolio.art.allstuff %}
+    <a href="http://andreasilva.design">
+      <img alt="{{ image.alt }}"
+        src="{{ site.baseurl }}/assets/images/portfolio/art/{{ image.gallery }}/{{ image.thumb }}"
+        data-image="{{ site.baseurl }}/assets/images/portfolio/art/{{ image.gallery }}/{{ image.full }}"
+        data-description="{{ image.description }}"
+        style="display:none">
+    </a>
+  {% endfor %}
+</div>
+
+{% include uniteGallery.html %}

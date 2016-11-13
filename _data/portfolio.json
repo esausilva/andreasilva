@@ -91,98 +91,251 @@
       "description": "KVMV Happy Thanksgiving Card"
     },
     {
-      "alt": "Web bannner for a Valentine's Day contest with KJIL ",    
+      "alt": "Web bannner for a Valentine's Day contest with KJIL",    
       "thumb": "UDN_Valentines_Giveaway-tn.jpg",
       "full": "UDN_Valentines_Giveaway.jpg",
       "description": "Ultimate Date Night Card"
+    },
+    {
+      "alt": "Adornments Jewelry",    
+      "thumb": "AdornmentsJewelry-tn.jpg",
+      "full": "AdornmentsJewelry.jpg",
+      "description": "Adornments Jewelry"
+    },
+    {
+      "alt": "Life's a Zoo Invitation",    
+      "thumb": "LifesAZooInvitation-tn.jpg",
+      "full": "LifesAZooInvitation.jpg",
+      "description": "Life's a Zoo Invitation"
     }
   ],
-  "art": [
-    {
-      "alt": "Banker and Bandersnatch",    
-      "thumb": "Banker_and_Bandersnatch-tn.jpg",
-      "full": "Banker_and_Bandersnatch.jpg",
-      "description": "Banker and Bandersnatch"
-    },
-    {
-      "alt": "Birthday",    
-      "thumb": "Birthday-tn.jpg",
-      "full": "Birthday.jpg",
-      "description": "Birthday"
-    },
-    {
-      "alt": "Chocloate Park",    
-      "thumb": "Chocolate_Park-tn.jpg",
-      "full": "Chocolate_Park.jpg",
-      "description": "Chocolate Park"
-    },
-    {
-      "alt": "Christmas with the Trolls",    
-      "thumb": "Christmas_with_the_Trolls-tn.jpg",
-      "full": "Christmas_with_the_Trolls.jpg",
-      "description": "Christmas with the Trolls"
-    },
-    {
-      "alt": "Feed the Birds",    
-      "thumb": "Feed_the_Birds-tn.jpg",
-      "full": "Feed_the_Birds.jpg",
-      "description": "Feed the Birds"
-    },
-    {
-      "alt": "Garden Hoses",    
-      "thumb": "garden_hoses-tn.jpg",
-      "full": "garden_hoses.jpg",
-      "description": "Garden Hoses"
-    },
-    {
-      "alt": "Miracle on 34th Street",    
-      "thumb": "Miracle_on_34th_Street-tn.jpg",
-      "full": "Miracle_on_34th_Street.jpg",
-      "description": "Miracle on 34th Street"
-    },
-    {
-      "alt": "Proposal",    
-      "thumb": "proposal-tn.jpg",
-      "full": "proposal.jpg",
-      "description": "Proposal"
-    },
-    {
-      "alt": "The Magician's Nephew",    
-      "thumb": "The_Magicians_Nephew-tn.jpg",
-      "full": "The_Magicians_Nephew.jpg",
-      "description": "The Magicians Nephew"
-    },
-    {
-      "alt": "The Underground",    
-      "thumb": "The_Underground-tn.jpg",
-      "full": "The_Underground.jpg",
-      "description": "The Underground"
-    },
-    {
-      "alt": "Venice",    
-      "thumb": "Venice-tn.jpg",
-      "full": "Venice.jpg",
-      "description": "Venice"
-    },
-    {
-      "alt": "Wedding",    
-      "thumb": "wedding-tn.jpg",
-      "full": "wedding.jpg",
-      "description": "Wedding"
-    },
-    {
-      "alt": "Wisdom Cafe",    
-      "thumb": "Wisdom_Cafe-tn.jpg",
-      "full": "Wisdom_Cafe.jpg",
-      "description": "Wisdom Cafe"
-    },
-    {
-      "alt": "Wursterei",    
-      "thumb": "Wursterei-tn.jpg",
-      "full": "Wursterei.jpg",
-      "description": "Wursterei"
-    }
-  ],
+  "art": {
+      "allstuff": [
+        {
+          "alt": "Chocloate Park",    
+          "thumb": "Chocolate_Park-tn.jpg",
+          "full": "Chocolate_Park.jpg",
+          "description": "Chocolate Park",
+          "gallery": "allstuff"
+        },
+        {
+          "alt": "Garden Hoses",    
+          "thumb": "garden_hoses-tn.jpg",
+          "full": "garden_hoses.jpg",
+          "description": "Garden Hoses",
+          "gallery": "allstuff"
+        },{
+          "alt": "Proposal",    
+          "thumb": "proposal-tn.jpg",
+          "full": "proposal.jpg",
+          "description": "Proposal",
+          "gallery": "allstuff"
+        },{
+          "alt": "Wedding",    
+          "thumb": "wedding-tn.jpg",
+          "full": "wedding.jpg",
+          "description": "Wedding",
+          "gallery": "allstuff"
+        }
+      ],
+      "europe": [
+        {
+          "alt": "Feed the Birds",    
+          "thumb": "Feed_the_Birds-tn.jpg",
+          "full": "Feed_the_Birds.jpg",
+          "description": "Feed the Birds",
+          "gallery": "europe"
+        },
+        {
+          "alt": "The Underground",    
+          "thumb": "The_Underground-tn.jpg",
+          "full": "The_Underground.jpg",
+          "description": "The Underground",
+          "gallery": "europe"
+        },
+        {
+          "alt": "Venice",    
+          "thumb": "Venice-tn.jpg",
+          "full": "Venice.jpg",
+          "description": "Venice",
+          "gallery": "europe"
+        },
+        {
+          "alt": "Wisdom Cafe",    
+          "thumb": "Wisdom_Cafe-tn.jpg",
+          "full": "Wisdom_Cafe.jpg",
+          "description": "Wisdom Cafe",
+          "gallery": "europe"
+        },
+        {
+          "alt": "Wursterei",    
+          "thumb": "Wursterei-tn.jpg",
+          "full": "Wursterei.jpg",
+          "description": "Wursterei",
+          "gallery": "europe"
+        }
+      ],
+      "literature": [
+        {
+          "alt": "Banker and Bandersnatch",    
+          "thumb": "Banker_and_Bandersnatch-tn.jpg",
+          "full": "Banker_and_Bandersnatch.jpg",
+          "description": "Banker and Bandersnatch",
+          "gallery": "literature"
+        },
+        {
+          "alt": "Great Expectations",    
+          "thumb": "GreatExpectations-tn.jpg",
+          "full": "GreatExpectations.jpg",
+          "description": "Great Expectations",
+          "gallery": "literature"
+        },
+        {
+          "alt": "Little Women",    
+          "thumb": "LittleWomen-tn.jpg",
+          "full": "LittleWomen.jpg",
+          "description": "Little Women",
+          "gallery": "literature"
+        },
+        {
+          "alt": "Peter Pan",    
+          "thumb": "PeterPan-tn.jpg",
+          "full": "PeterPan.jpg",
+          "description": "Peter Pan",
+          "gallery": "literature"
+        },
+        {
+          "alt": "Scarlet Letter",    
+          "thumb": "ScarletLetter-tn.jpg",
+          "full": "ScarletLetter.jpg",
+          "description": "Scarlet Letter",
+          "gallery": "literature"
+        },
+        {
+          "alt": "Silas Marner",    
+          "thumb": "SilasMarner-tn.jpg",
+          "full": "SilasMarner.jpg",
+          "description": "Silas Marner",
+          "gallery": "literature"
+        },
+        {
+          "alt": "The Magician's Nephew",    
+          "thumb": "The_Magicians_Nephew-tn.jpg",
+          "full": "The_Magicians_Nephew.jpg",
+          "description": "The Magicians Nephew",
+          "gallery": "literature"
+        },
+        {
+          "alt": "The Hobbit",    
+          "thumb": "TheHobbit-tn.jpg",
+          "full": "TheHobbit.jpg",
+          "description": "The Hobbit",
+          "gallery": "literature"
+        },
+        {
+          "alt": "To Kill a Mockingbird",    
+          "thumb": "ToKillAMockingbird-tn.jpg",
+          "full": "ToKillAMockingbird.jpg",
+          "description": "To Kill a Mockingbird",
+          "gallery": "literature"
+        },
+        {
+          "alt": "Wind In The Willows",    
+          "thumb": "WindInTheWillows-tn.jpg",
+          "full": "WindInTheWillows.jpg",
+          "description": "Wind In The Willows",
+          "gallery": "literature"
+        }
+      ],
+      "misfits": [
+        {
+          "alt": "Christmas with the Trolls",    
+          "thumb": "Christmas_with_the_Trolls-tn.jpg",
+          "full": "Christmas_with_the_Trolls.jpg",
+          "description": "Christmas with the Trolls",
+          "gallery": "misfits"
+        },
+        {
+          "alt": "December Twine",    
+          "thumb": "DecemberTwine-tn.jpg",
+          "full": "DecemberTwine.jpg",
+          "description": "December Twine",
+          "gallery": "misfits"
+        },
+        {
+          "alt": "Miracle on 34th Street",    
+          "thumb": "Miracle_on_34th_Street-tn.jpg",
+          "full": "Miracle_on_34th_Street.jpg",
+          "description": "Miracle on 34th Street",
+          "gallery": "misfits"
+        },
+        {
+          "alt": "Reindeer Games",    
+          "thumb": "ReindeerGames-tn.jpg",
+          "full": "ReindeerGames.jpg",
+          "description": "Reindeer Games",
+          "gallery": "misfits"
+        }
+      ],
+      "other": [
+        {
+          "alt": "A Wish For Health",    
+          "thumb": "AWishForHealth-tn.jpg",
+          "full": "AWishForHealth.jpg",
+          "description": "A Wish For Health",
+          "gallery": "other"
+        },
+        {
+          "alt": "Birthday",    
+          "thumb": "Birthday-tn.jpg",
+          "full": "Birthday.jpg",
+          "description": "Birthday",
+          "gallery": "other"
+        },
+        {
+          "alt": "My Favorite Things 1",    
+          "thumb": "MyFavoriteThings1-tn.jpg",
+          "full": "MyFavoriteThings1.jpg",
+          "description": "My Favorite Things 1",
+          "gallery": "other"
+        },
+        {
+          "alt": "My Favorite Things 2",    
+          "thumb": "MyFavoriteThings2-tn.jpg",
+          "full": "MyFavoriteThings2.jpg",
+          "description": "My Favorite Things 2",
+          "gallery": "other"
+        },
+        {
+          "alt": "Persuasion",    
+          "thumb": "Persuasion-tn.jpg",
+          "full": "Persuasion.jpg",
+          "description": "Persuasion",
+          "gallery": "other"
+        },
+        {
+          "alt": "The Musician",    
+          "thumb": "TheMusician-tn.jpg",
+          "full": "TheMusician.jpg",
+          "description": "The Musician",
+          "gallery": "other"
+        },
+        {
+          "alt": "The Stiefel",    
+          "thumb": "TheStiefel-tn.jpg",
+          "full": "TheStiefel.jpg",
+          "description": "The Stiefel",
+          "gallery": "other"
+        },
+        {
+          "alt": "Wedding Day",    
+          "thumb": "WeddingDay-tn.jpg",
+          "full": "WeddingDay.jpg",
+          "description": "Wedding Day",
+          "gallery": "other"
+        }
+      ]
+  },
   "photography": [
     {
       "alt": "IMG_1649",    
@@ -261,6 +414,18 @@
       "thumb": "IMG_70013-tn.jpg",
       "full": "IMG_70013.jpg",
       "description": "IMG_70013"
+    },
+    {
+      "alt": "IMG_9271",    
+      "thumb": "IMG_9271-tn.jpg",
+      "full": "IMG_9271.jpg",
+      "description": "IMG_9271"
+    },
+    {
+      "alt": "IMG_9280",    
+      "thumb": "IMG_9280-tn.jpg",
+      "full": "IMG_9280.jpg",
+      "description": "IMG_9280"
     }
   ],
   "animation": [

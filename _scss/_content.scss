@@ -40,14 +40,42 @@
   visibility: hidden;
 }
 
-/*#olderID {
-  height: 200px;
-  background-color: #333;
-  color: #fff;
-  text-align: center;
-  font-size: 4rem;
-  position: absolute;
-  z-index: 999;
-  width: 100%;
-  padding-top: 20px;
-}*/
+.galleries {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.gallery-container {
+  width: 280px;
+  height: 350px;
+  background: darken($graydarker, 5%);
+  border: 3px solid darken($graydarker, 5%);
+  margin-right: 15px;
+  margin-bottom: 15px;
+  color: $white;
+  border-radius: 0 0 8px 8px;
+
+  div {
+    width: 100%;
+    height: 281px;
+    overflow: hidden;
+  }
+
+  img {
+    transform: scale(1.02);
+    transition: all 0.35s;
+  }
+
+  &:hover img {
+    transform: scale(1);
+    filter: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg"><filter id="filter"><feComponentTransfer color-interpolation-filters="sRGB"><feFuncR type="linear" slope="0.7" /><feFuncG type="linear" slope="0.7" /><feFuncB type="linear" slope="0.7" /></feComponentTransfer></filter></svg>#filter');
+    filter: brightness(0.7);
+  }
+
+  p {
+    margin: 15px 0 0 0;
+    text-align: center;
+  }
+}
