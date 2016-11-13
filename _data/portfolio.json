@@ -112,26 +112,28 @@
   "art": {
       "allstuff": [
         {
-          "alt": "Chocloate Park",    
+          "alt": "Garden Hoses",    
+          "thumb": "garden_hoses-tn.jpg",
+          "full": "garden_hoses.jpg",
+          "description": "Garden Hoses",
+          "gallery": "allstuff"
+        },
+        {
+          "alt": "Chocolate Park",    
           "thumb": "Chocolate_Park-tn.jpg",
           "full": "Chocolate_Park.jpg",
           "description": "Chocolate Park",
           "gallery": "allstuff"
         },
         {
-          "alt": "Garden Hoses",    
-          "thumb": "garden_hoses-tn.jpg",
-          "full": "garden_hoses.jpg",
-          "description": "Garden Hoses",
-          "gallery": "allstuff"
-        },{
-          "alt": "Proposal",    
+          "alt": "The Proposal",    
           "thumb": "proposal-tn.jpg",
           "full": "proposal.jpg",
           "description": "Proposal",
           "gallery": "allstuff"
-        },{
-          "alt": "Wedding",    
+        },
+        {
+          "alt": "Wedding Day",    
           "thumb": "wedding-tn.jpg",
           "full": "wedding.jpg",
           "description": "Wedding",
@@ -161,7 +163,7 @@
           "gallery": "europe"
         },
         {
-          "alt": "Wisdom Cafe",    
+          "alt": "Wisdom in a French Cafe",    
           "thumb": "Wisdom_Cafe-tn.jpg",
           "full": "Wisdom_Cafe.jpg",
           "description": "Wisdom Cafe",
@@ -177,70 +179,70 @@
       ],
       "literature": [
         {
-          "alt": "Banker and Bandersnatch",    
+          "alt": "<i>Banker and Bandersnatch</i> from <i>The Hunting of the Snark</i> by Lewis Carroll",    
           "thumb": "Banker_and_Bandersnatch-tn.jpg",
           "full": "Banker_and_Bandersnatch.jpg",
           "description": "Banker and Bandersnatch",
           "gallery": "literature"
         },
         {
-          "alt": "Great Expectations",    
+          "alt": "<i>Wedding Cake</i> from <i>Great Expectations</i> by Charles Dickens",    
           "thumb": "GreatExpectations-tn.jpg",
           "full": "GreatExpectations.jpg",
           "description": "Great Expectations",
           "gallery": "literature"
         },
         {
-          "alt": "Little Women",    
+          "alt": "<i>The Haircut</i> from <i>Little Women</i> by Louisa May Alcott",    
           "thumb": "LittleWomen-tn.jpg",
           "full": "LittleWomen.jpg",
           "description": "Little Women",
           "gallery": "literature"
         },
         {
-          "alt": "Peter Pan",    
+          "alt": "<i>Shhh!</i> from <i>Peter Pan</i> by J.M. Barrie",    
           "thumb": "PeterPan-tn.jpg",
           "full": "PeterPan.jpg",
           "description": "Peter Pan",
           "gallery": "literature"
         },
         {
-          "alt": "Scarlet Letter",    
+          "alt": "From <i>The Scarlet Letter</i> by Nathaniel Hawthorne",    
           "thumb": "ScarletLetter-tn.jpg",
           "full": "ScarletLetter.jpg",
           "description": "Scarlet Letter",
           "gallery": "literature"
         },
         {
-          "alt": "Silas Marner",    
+          "alt": "From <i>Silas Marner</i> by George Eliot",    
           "thumb": "SilasMarner-tn.jpg",
           "full": "SilasMarner.jpg",
           "description": "Silas Marner",
           "gallery": "literature"
         },
         {
-          "alt": "The Magician's Nephew",    
+          "alt": "<i>Uncle Andrew</i> from <i>The Magician's Nephew</i> by C.S. Lewis",    
           "thumb": "The_Magicians_Nephew-tn.jpg",
           "full": "The_Magicians_Nephew.jpg",
           "description": "The Magicians Nephew",
           "gallery": "literature"
         },
         {
-          "alt": "The Hobbit",    
+          "alt": "<i>Chip the Glasses and Crack the Plates</i> from <i>The Hobbit</i> by J.R.R. Tolkien",    
           "thumb": "TheHobbit-tn.jpg",
           "full": "TheHobbit.jpg",
           "description": "The Hobbit",
           "gallery": "literature"
         },
         {
-          "alt": "To Kill a Mockingbird",    
+          "alt": "From <i>To Kill a Mockingbird</i> by Harper Lee",    
           "thumb": "ToKillAMockingbird-tn.jpg",
           "full": "ToKillAMockingbird.jpg",
           "description": "To Kill a Mockingbird",
           "gallery": "literature"
         },
         {
-          "alt": "Wind In The Willows",    
+          "alt": "<i>Mr. Toad</i> from <i>The Wind in the Willows</i> by Kenneth Grahame",    
           "thumb": "WindInTheWillows-tn.jpg",
           "full": "WindInTheWillows.jpg",
           "description": "Wind In The Willows",
@@ -277,152 +279,152 @@
           "gallery": "misfits"
         }
       ],
-      "other": [
+      "misc": [
         {
-          "alt": "A Wish For Health",    
+          "alt": "A Wish for Health",    
           "thumb": "AWishForHealth-tn.jpg",
           "full": "AWishForHealth.jpg",
           "description": "A Wish For Health",
-          "gallery": "other"
+          "gallery": "misc"
         },
         {
           "alt": "Birthday",    
           "thumb": "Birthday-tn.jpg",
           "full": "Birthday.jpg",
           "description": "Birthday",
-          "gallery": "other"
+          "gallery": "misc"
         },
         {
-          "alt": "My Favorite Things 1",    
+          "alt": "My Favorite Things I",    
           "thumb": "MyFavoriteThings1-tn.jpg",
           "full": "MyFavoriteThings1.jpg",
           "description": "My Favorite Things 1",
-          "gallery": "other"
+          "gallery": "misc"
         },
         {
-          "alt": "My Favorite Things 2",    
+          "alt": "My Favorite Things II",    
           "thumb": "MyFavoriteThings2-tn.jpg",
           "full": "MyFavoriteThings2.jpg",
           "description": "My Favorite Things 2",
-          "gallery": "other"
+          "gallery": "misc"
         },
         {
           "alt": "Persuasion",    
           "thumb": "Persuasion-tn.jpg",
           "full": "Persuasion.jpg",
           "description": "Persuasion",
-          "gallery": "other"
+          "gallery": "misc"
         },
         {
           "alt": "The Musician",    
           "thumb": "TheMusician-tn.jpg",
           "full": "TheMusician.jpg",
           "description": "The Musician",
-          "gallery": "other"
+          "gallery": "misc"
         },
         {
           "alt": "The Stiefel",    
           "thumb": "TheStiefel-tn.jpg",
           "full": "TheStiefel.jpg",
           "description": "The Stiefel",
-          "gallery": "other"
+          "gallery": "misc"
         },
         {
           "alt": "Wedding Day",    
           "thumb": "WeddingDay-tn.jpg",
           "full": "WeddingDay.jpg",
           "description": "Wedding Day",
-          "gallery": "other"
+          "gallery": "misc"
         }
       ]
   },
   "photography": [
     {
-      "alt": "IMG_1649",    
+      "alt": "",    
       "thumb": "IMG_1649-tn.jpg",
       "full": "IMG_1649.jpg",
       "description": "IMG_1649"
     },
     {
-      "alt": "IMG_6655",    
+      "alt": "",    
       "thumb": "IMG_6655-tn.jpg",
       "full": "IMG_6655.jpg",
       "description": "IMG_6655"
     },
     {
-      "alt": "IMG_6704",    
+      "alt": "",    
       "thumb": "IMG_6704-tn.jpg",
       "full": "IMG_6704.jpg",
       "description": "IMG_6704"
     },
     {
-      "alt": "IMG_6735",    
+      "alt": "",    
       "thumb": "IMG_6735-tn.jpg",
       "full": "IMG_6735.jpg",
       "description": "IMG_6735"
     },
     {
-      "alt": "IMG_6944",    
+      "alt": "",    
       "thumb": "IMG_6944-tn.jpg",
       "full": "IMG_6944.jpg",
       "description": "IMG_6944"
     },
     {
-      "alt": "IMG_6965",    
+      "alt": "",    
       "thumb": "IMG_6965-tn.jpg",
       "full": "IMG_6965.jpg",
       "description": "IMG_6965"
     },
     {
-      "alt": "IMG_7021",    
+      "alt": "",    
       "thumb": "IMG_7021-tn.jpg",
       "full": "IMG_7021.jpg",
       "description": "IMG_7021-tn"
     },
     {
-      "alt": "IMG_7344",    
+      "alt": "",    
       "thumb": "IMG_7344-tn.jpg",
       "full": "IMG_7344.jpg",
       "description": "IMG_7344"
     },
     {
-      "alt": "IMG_8569",    
+      "alt": "",    
       "thumb": "IMG_8569-tn.jpg",
       "full": "IMG_8569.jpg",
       "description": "IMG_8569"
     },
     {
-      "alt": "IMG_8681",    
+      "alt": "",    
       "thumb": "IMG_8681-tn.jpg",
       "full": "IMG_8681.jpg",
       "description": "IMG_8681"
     },
     {
-      "alt": "IMG_8729",    
+      "alt": "",    
       "thumb": "IMG_8729-tn.jpg",
       "full": "IMG_8729.jpg",
       "description": "IMG_8729"
     },
     {
-      "alt": "IMG_62722",    
+      "alt": "",    
       "thumb": "IMG_62722-tn.jpg",
       "full": "IMG_62722.jpg",
       "description": "IMG_62722"
     },
     {
-      "alt": "IMG_70013",    
+      "alt": "",    
       "thumb": "IMG_70013-tn.jpg",
       "full": "IMG_70013.jpg",
       "description": "IMG_70013"
     },
     {
-      "alt": "IMG_9271",    
+      "alt": "",    
       "thumb": "IMG_9271-tn.jpg",
       "full": "IMG_9271.jpg",
       "description": "IMG_9271"
     },
     {
-      "alt": "IMG_9280",    
+      "alt": "",    
       "thumb": "IMG_9280-tn.jpg",
       "full": "IMG_9280.jpg",
       "description": "IMG_9280"
@@ -433,19 +435,19 @@
       "title": "Coloring Contest 2015",    
       "image": "Coloring_Contest_2015.png",
       "src": "Coloring_Contest_2015.mp4",
-      "description": "Coloring Contest 2015"
+      "description": "Web banner for KJIL's annual Kid's Coloring Contest"
     },
     {
       "title": "February Budget Monster",    
       "image": "February_Budget_Monster.png",
       "src": "February_Budget_Monster.mp4",
-      "description": "February Budget Monster"
+      "description": "Web banner for KJIL promoting donor giving in the month of February"
     },
     {
       "title": "Magnify Animated",    
       "image": "Magnify_Animated.png",
       "src": "Magnify_Animated.mp4",
-      "description": "Magnify Animated"
+      "description": "Web banner for 90.9 KWRB in Sierra Vista, AZ for their bi-annual sharathon"
     }
   ]
 }

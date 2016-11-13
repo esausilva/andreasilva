@@ -29,11 +29,11 @@
       "html": "fine-art-and-illustration/misfits-audio.html"
     },
     {
-      "title": "Other",
+      "title": "Miscellaneous",
       "image": "TheMusician-tn.jpg",
-      "alt": "Other",
-      "gallery": "art/other",
-      "html": "fine-art-and-illustration/other.html"
+      "alt": "Miscellaneous",
+      "gallery": "art/misc",
+      "html": "fine-art-and-illustration/miscellaneous.html"
     }
   ]
 }
