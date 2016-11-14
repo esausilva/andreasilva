@@ -52,7 +52,7 @@ gulp.task('browser-sync', ['sass', 'jekyll-build'], function() {
  */
 gulp.task('sass', function () {
     var processors = [
-            prefix({ browsers: ['> 0%', 'last 2 versions'] }),
+            prefix({ browsers: ['> 0%', 'last 3 versions'] }),
             csswring,
             cssnano,
           ];
