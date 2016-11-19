@@ -43,7 +43,7 @@
       "description": "KJIL Homepage"
     },
     {
-      "alt": "Children's T-Shirt",    
+      "alt": "Childrens T-Shirt",    
       "thumb": "kjil_tshirt_pink-tn.jpg",
       "full": "kjil_tshirt_pink.jpg",
       "description": "KJIL Pink T-shirt"
@@ -91,22 +91,46 @@
       "description": "KVMV Happy Thanksgiving Card"
     },
     {
-      "alt": "Web bannner for a Valentine's Day contest with KJIL",    
+      "alt": "Web bannner for a Valentines Day contest with KJIL",    
       "thumb": "UDN_Valentines_Giveaway-tn.jpg",
       "full": "UDN_Valentines_Giveaway.jpg",
       "description": "Ultimate Date Night Card"
     },
     {
-      "alt": "Adornments Jewelry",    
+      "alt": "Logo for Adornments Jewelry, specializing in hand-made, one-of-a-kind jewelry art pieces",    
       "thumb": "AdornmentsJewelry-tn.jpg",
       "full": "AdornmentsJewelry.jpg",
       "description": "Adornments Jewelry"
     },
     {
-      "alt": "Life's a Zoo Invitation",    
+      "alt": "<i>Life is a Zoo</i> Baby Shower Invitation",    
       "thumb": "LifesAZooInvitation-tn.jpg",
       "full": "LifesAZooInvitation.jpg",
-      "description": "Life's a Zoo Invitation"
+      "description": "Lifes a Zoo Invitation"
+    },
+    {
+      "alt": "Adamyk Wedding Programs",    
+      "thumb": "AdamykPrograms-tn.jpg",
+      "full": "AdamykPrograms.jpg",
+      "description": "Adamyk Programs"
+    },
+    {
+      "alt": "Ebenfeld Friends T-Shirt for a Church Youth Group",    
+      "thumb": "EbenfeldFriends-tn.jpg",
+      "full": "EbenfeldFriends.jpg",
+      "description": "Ebenfeld Friends"
+    },
+    {
+      "alt": "Invitations for My Wedding",    
+      "thumb": "Invitations-tn.jpg",
+      "full": "Invitations.jpg",
+      "description": "Invitations"
+    },
+    {
+      "alt": "Save the Date Postcards for My Wedding",    
+      "thumb": "SaveTheDates-tn.jpg",
+      "full": "SaveTheDates.jpg",
+      "description": "Save The Dates"
     }
   ],
   "art": {
@@ -221,7 +245,7 @@
           "gallery": "literature"
         },
         {
-          "alt": "<i>Uncle Andrew</i> from <i>The Magician's Nephew</i> by C.S. Lewis",    
+          "alt": "<i>Uncle Andrew</i> from <i>The Magicians Nephew</i> by C.S. Lewis",    
           "thumb": "The_Magicians_Nephew-tn.jpg",
           "full": "The_Magicians_Nephew.jpg",
           "description": "The Magicians Nephew",
@@ -435,7 +459,7 @@
       "title": "Coloring Contest 2015",    
       "image": "Coloring_Contest_2015.png",
       "src": "Coloring_Contest_2015.mp4",
-      "description": "Web banner for KJIL's annual Kid's Coloring Contest"
+      "description": "Web banner for KJILs annual Kids Coloring Contest"
     },
     {
       "title": "February Budget Monster",    

@@ -52,7 +52,7 @@ gulp.task('browser-sync', ['sass', 'jekyll-build'], function() {
  */
 gulp.task('sass', function () {
     var processors = [
-            prefix({ browsers: ['> 0%', 'last 3 versions'] }),
+            prefix({ browsers: ['> 5%', 'last 3 versions'] }),
             csswring,
             cssnano,
           ];
@@ -95,7 +95,6 @@ gulp.task('default', ['browser-sync', 'watch']);
  * Deploy to GitHub Pages
  */
 gulp.task("deploy", ["jekyll-build"], function () {
-    env = 'production';
     return gulp.src("./_site/**/*")
         .pipe(deploy());
 });
