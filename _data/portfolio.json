@@ -1,6 +1,18 @@
 {
   "design": [
     {
+      "alt": "Save the Date Postcards for My Wedding",    
+      "thumb": "SaveTheDates-tn.jpg",
+      "full": "SaveTheDates.jpg",
+      "description": "Save The Dates"
+    },
+    {
+      "alt": "Invitations for My Wedding",    
+      "thumb": "Invitations-tn.jpg",
+      "full": "Invitations.jpg",
+      "description": "Invitations"
+    },
+    {
       "alt": "Web banner for a backpack giveaway contest for KJIL",    
       "thumb": "Back_In_School-tn.jpg",
       "full": "Back_In_School.jpg",
@@ -49,6 +61,12 @@
       "description": "KJIL Pink T-shirt"
     },
     {
+      "alt": "KVMV Christmas Card",    
+      "thumb": "kvmvChristmas-tn.jpg",
+      "full": "kvmvChristmas.jpg",
+      "description": "KVMV Christmas"
+    },
+    {
       "alt": "KJIL T-shirt",    
       "thumb": "kjil_tshirt_red-tn.jpg",
       "full": "kjil_tshirt_red.jpg",
@@ -65,12 +83,6 @@
       "thumb": "pastor_appreciation-tn.jpg",
       "full": "pastor_appreciation.jpg",
       "description": "Pastor Appreciation Card"
-    },
-    {
-      "alt": "Prism Font",    
-      "thumb": "prism_font-tn.jpg",
-      "full": "prism_font.jpg",
-      "description": "Prism Font"
     },
     {
       "alt": "Pull Forward Pay Back - logo designed for a promotion encouraging KJIL listeners to pull forward in the drive thru and pay for the person behind them",    
@@ -109,6 +121,12 @@
       "description": "Lifes a Zoo Invitation"
     },
     {
+      "alt": "Spring Serve T-Shirt, designed for a college service trip over Spring Break",    
+      "thumb": "SpringServe-tn.jpg",
+      "full": "SpringServe.jpg",
+      "description": "Spring Serve"
+    },
+    {
       "alt": "Adamyk Wedding Programs",    
       "thumb": "AdamykPrograms-tn.jpg",
       "full": "AdamykPrograms.jpg",
@@ -121,16 +139,16 @@
       "description": "Ebenfeld Friends"
     },
     {
-      "alt": "Invitations for My Wedding",    
-      "thumb": "Invitations-tn.jpg",
-      "full": "Invitations.jpg",
-      "description": "Invitations"
+      "alt": "PT Cruiser Wrap",    
+      "thumb": "PTCruiser-tn.jpg",
+      "full": "PTCruiser.jpg",
+      "description": "PT Cruiser"
     },
     {
-      "alt": "Save the Date Postcards for My Wedding",    
-      "thumb": "SaveTheDates-tn.jpg",
-      "full": "SaveTheDates.jpg",
-      "description": "Save The Dates"
+      "alt": "Prism Font",    
+      "thumb": "prism_font-tn.jpg",
+      "full": "prism_font.jpg",
+      "description": "Prism Font"
     }
   ],
   "art": {
