@@ -79,3 +79,42 @@
     text-align: center;
   }
 }
+
+.testimonials {
+  font-size: 1.9rem;
+  line-height: 3rem;
+  font-style: italic;
+
+  div {
+    margin-bottom: 10px;
+  }
+
+  i, 
+  p {
+    float: left !important;
+  }
+
+  i {
+    color: lighten($gray, 61%);
+  }
+
+  p {
+    width: 80%;
+    margin-left: 10px;
+
+    .author {
+      float: right !important;
+      color: lighten($burgundydark, 40%);
+      padding-top: 10px;
+    }
+  }
+}
+
+@media (max-width:321px) {
+  .testimonials {
+    .quote {
+      width: 78%;
+      margin-left: 10px;
+    }
+  }
+}

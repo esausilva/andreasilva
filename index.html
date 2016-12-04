@@ -16,6 +16,25 @@ canonical: http://andreasilva.design/
   {% endfor %}
 </div>
 
+<br /><br />
+
+<div class="row">
+  <div class="col-md-10 col-md-offset-1">
+    
+    <div class="row testimonials">
+      {% for testimonial in site.data.testimonials %}
+        <div class="col-md-6 col-sm-6">
+          <i class="fa fa-quote-left fa-3x" aria-hidden="true"></i>
+          <p>{{ testimonial.quote }}<br>
+          <span class="author">- {{ testimonial.name }} {{ testimonial.title }}</span></p>
+          <div class="clearfix"></div>
+        </div>
+      {% endfor %}
+    </div>
+
+  </div>
+</div>
+
 <a href="{{ site.baseurl }}/portfolio/graphic-design.html" class="hidden" id="DesignLnk"></a>
 <a href="{{ site.baseurl }}/portfolio/fine-art-and-illustration.html" class="hidden" id="ArtLnk"></a>
 <a href="{{ site.baseurl }}/portfolio/photography.html" class="hidden" id="PhotographyLnk"></a>
