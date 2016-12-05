@@ -5,4 +5,4 @@ Andrea Silva Design showcases the work of graphic designer and artist Andrea Sil
 
 ## Boilerplate
 
-[jekyll-gulp-boilerplate](https://github.com/esausilva/jekyll-gulp-boilerplate) by Esau Silva
+[jekyll-gulp-boilerplate](https://github.com/esausilva/jekyll-gulp-boilerplate) - This boilerplate by Esau Silva was used.
