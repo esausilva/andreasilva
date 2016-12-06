@@ -1,5 +1,5 @@
 $(document).ready(function ($) {
-  // ===== Resizing index header
+  //  Resizing index header =================================
   var windowObj = $(window);
   var logoMain = $('#logo-main');
   var logoMainHeight;
@@ -33,7 +33,7 @@ $(document).ready(function ($) {
     fullscreen();         
   });
 
-  // ===== Assign links to Feature Images
+  // Assign links to Feature Images =============================
   $('#GraphicDesign').click(function () {
     $('#DesignLnk')[0].click();
   });
@@ -50,7 +50,7 @@ $(document).ready(function ($) {
     $('#AnimationLnk')[0].click();
   });
 
-  //ScrollReveal
+  // ScrollReveal =============================================
   function detectIE() {
       var ua = window.navigator.userAgent;
 
@@ -83,7 +83,7 @@ $(document).ready(function ($) {
     $('#sr').css({"visibility":"visible"});
   }
 
-  //Smooth scroll same page anchor
+  // Smooth scroll same page anchor ==============================
   $('a[href*="#"]:not([href="#"])').click(function() {
     if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
       var target = $(this.hash);
@@ -94,6 +94,60 @@ $(document).ready(function ($) {
         }, 1000);
         return false;
       }
+    }
+  });
+
+  // Contact Form ================================================
+  $('#contact-form').validate({
+    rules: {
+      name: "required",
+      email: {
+        required: true,
+        email: true
+      },
+      message: "required" 
+    },
+    messages: {
+      name: "Please enter your name",
+      email: "Please enter a valid email address",
+      message: "Please enter a message"
+    },
+    submitHandler: function(form, e) {
+      e.preventDefault();
+      var $contactForm = $('#contact-form');
+
+      var $submit = $('input:submit', $contactForm);
+      var defaultSubmitText = $submit.val();
+
+      $.ajax({
+        url: '//formspree.io/andreasilva.design@outlook.com',
+        method: 'POST',
+        data: $contactForm.serialize(),
+        dataType: 'json',
+        beforeSend: function() {
+          $contactForm.prepend('<div class="alert alert-info" role="alert">Sending message…</div>');
+          $submit.attr('disabled', true).val('Sending message…');
+        },
+        success: function(data) {
+          $('.alert-info').remove();
+          $contactForm.prepend('<div class="alert alert-success" role="alert">Message sent!</div>');
+          $submit.val('Message sent!');
+          $contactForm[0].reset();
+          setTimeout(function() {
+            $('.alert-success').remove();
+            $submit.attr('disabled', false).val(defaultSubmitText);
+          }, 5000);
+        },
+        error: function(err) {
+          $('.alert-info').remove();
+          $contactForm.prepend('<div class="alert alert-danger" role="alert">Ops, there was an error. Please try again in 5 seconds.</div>');
+          $submit.val('Ops, there was an error.');
+          setTimeout(function() {
+            $('.alert-error').remove();
+            $submit.attr('disabled', false).val(defaultSubmitText);
+          }, 5000);
+        }
+      });
     }
   });
 });
