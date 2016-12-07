@@ -125,8 +125,8 @@ $(document).ready(function ($) {
         data: $contactForm.serialize(),
         dataType: 'json',
         beforeSend: function() {
-          $contactForm.prepend('<div class="alert alert-info" role="alert">Sending message…</div>');
-          $submit.attr('disabled', true).val('Sending message…');
+          $contactForm.prepend('<div class="alert alert-info" role="alert">Sending message...</div>');
+          $submit.attr('disabled', true).val('Sending message...');
         },
         success: function(data) {
           $('.alert-info').remove();
