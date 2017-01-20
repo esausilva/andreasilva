@@ -98,56 +98,63 @@ $(document).ready(function ($) {
   });
 
   // Contact Form ================================================
-  $('#contact-form').validate({
-    rules: {
-      name: "required",
-      email: {
-        required: true,
-        email: true
+  function validateContactForm () {
+    $('#contact-form').validate({
+      rules: {
+        name: "required",
+        email: {
+          required: true,
+          email: true
+        },
+        message: "required" 
       },
-      message: "required" 
-    },
-    messages: {
-      name: "Please enter your name",
-      email: "Please enter a valid email address",
-      message: "Please enter a message"
-    },
-    submitHandler: function(form, e) {
-      e.preventDefault();
-      var $contactForm = $('#contact-form');
+      messages: {
+        name: "Please enter your name",
+        email: "Please enter a valid email address",
+        message: "Please enter a message"
+      },
+      submitHandler: function(form, e) {
+        e.preventDefault();
+        var $contactForm = $('#contact-form');
 
-      var $submit = $('input:submit', $contactForm);
-      var defaultSubmitText = $submit.val();
+        var $submit = $('input:submit', $contactForm);
+        var defaultSubmitText = $submit.val();
 
-      $.ajax({
-        url: '//formspree.io/andreasilva.design@outlook.com',
-        method: 'POST',
-        data: $contactForm.serialize(),
-        dataType: 'json',
-        beforeSend: function() {
-          $contactForm.prepend('<div class="alert alert-info" role="alert">Sending message...</div>');
-          $submit.attr('disabled', true).val('Sending message...');
-        },
-        success: function(data) {
-          $('.alert-info').remove();
-          $contactForm.prepend('<div class="alert alert-success" role="alert">Message sent!</div>');
-          $submit.val('Message sent!');
-          $contactForm[0].reset();
-          setTimeout(function() {
-            $('.alert-success').remove();
-            $submit.attr('disabled', false).val(defaultSubmitText);
-          }, 5000);
-        },
-        error: function(err) {
-          $('.alert-info').remove();
-          $contactForm.prepend('<div class="alert alert-danger" role="alert">Ops, there was an error. Please try again in 5 seconds.</div>');
-          $submit.val('Ops, there was an error.');
-          setTimeout(function() {
-            $('.alert-error').remove();
-            $submit.attr('disabled', false).val(defaultSubmitText);
-          }, 5000);
-        }
-      });
-    }
-  });
+        $.ajax({
+          url: '//formspree.io/andreasilva.design@outlook.com',
+          method: 'POST',
+          data: $contactForm.serialize(),
+          dataType: 'json',
+          beforeSend: function() {
+            $contactForm.prepend('<div class="alert alert-info" role="alert">Sending message...</div>');
+            $submit.attr('disabled', true).val('Sending message...');
+          },
+          success: function(data) {
+            $('.alert-info').remove();
+            $contactForm.prepend('<div class="alert alert-success" role="alert">Message sent!</div>');
+            $submit.val('Message sent!');
+            $contactForm[0].reset();
+            setTimeout(function() {
+              $('.alert-success').remove();
+              $submit.attr('disabled', false).val(defaultSubmitText);
+            }, 5000);
+          },
+          error: function(err) {
+            $('.alert-info').remove();
+            $contactForm.prepend('<div class="alert alert-danger" role="alert">Ops, there was an error. Please try again in 5 seconds.</div>');
+            $submit.val('Ops, there was an error.');
+            setTimeout(function() {
+              $('.alert-error').remove();
+              $submit.attr('disabled', false).val(defaultSubmitText);
+            }, 5000);
+          }
+        });
+      }
+    }); 
+  }  
+  
+  var url = window.location.href;
+  if (url.includes('contact-me')) {
+    validateContactForm();
+  }
 });
