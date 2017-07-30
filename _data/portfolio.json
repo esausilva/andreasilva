@@ -1,6 +1,18 @@
 {
   "design": [
     {
+      "alt": "Ministry overview magazine for Camp Loma De Vida",    
+      "thumb": "CLDV-tn.jpg",
+      "full": "CLDV.jpg",
+      "description": "Camp Loma De Vida"
+    },
+    {
+      "alt": "Cover image for daily podcast, KJIL Morning Rewind",    
+      "thumb": "KJIL_Morning_Rewind-tn.jpg",
+      "full": "KJIL_Morning_Rewind.jpg",
+      "description": "KJIL Morning Rewind Show"
+    },
+    {
       "alt": "Save the Date Postcards for My Wedding",    
       "thumb": "SaveTheDates-tn.jpg",
       "full": "SaveTheDates.jpg",
