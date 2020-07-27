@@ -1,87 +1,108 @@
-var gulp        = require('gulp');
-var deploy      = require("gulp-gh-pages");
-var browserSync = require('browser-sync');
-var sass        = require('gulp-sass');
-var prefix      = require('autoprefixer');
-var cp          = require('child_process');
-var postcss     = require('gulp-postcss');
-var csswring    = require('csswring');
-var cssnano     = require('cssnano');
-var del         = require('del');
+const gulp = require('gulp');
+const ghpages = require('gulp-gh-pages');
+const browserSync = require('browser-sync').create();
+const sass = require('gulp-sass');
+const prefix = require('autoprefixer');
+const cp = require('child_process');
+const postcss = require('gulp-postcss');
+const cssnano = require('cssnano');
+const del = require('del');
 
 var env = process.env.NODE_ENV || 'prod';
-var jekyll   = process.platform === 'win32' ? 'jekyll.bat' : 'jekyll';
+var jekyll = process.platform === 'win32' ? 'jekyll.bat' : 'jekyll';
 var messages = {
-    jekyllBuild: '<span style="color: grey">Running:</span> $ jekyll build'
+  jekyllBuild: '<span style="color: grey">Running:</span> $ jekyll build',
+};
+
+var paths = {
+  styles: {
+    src: '_scss/*.scss',
+    dest: '_site/assets/css',
+    destsecond: 'assets/css',
+  },
+  scripts: {
+    src: 'assets/scripts/*.js',
+    dest: '_site/assets/scripts',
+  },
 };
 
 /**
  * Build the Jekyll Site
  */
-gulp.task('jekyll-build', function (done) {
-    browserSync.notify(messages.jekyllBuild);
-    if(env === 'prod') {
-        return cp.spawn( jekyll, ['build'], {stdio: 'inherit'})
-        .on('close', done);
-    } else {
-        return cp.spawn( jekyll, ['build','--config', '_config.yml,_config.dev.yml'], {stdio: 'inherit'})
-        .on('close', done);
-    }
-});
+function jekyllBuild() {
+  browserSync.notify(messages.jekyllBuild);
+  if (env === 'prod') {
+    return cp.spawn(jekyll, ['build'], { stdio: 'inherit' });
+  } else {
+    return cp.spawn(
+      jekyll,
+      ['build', '--config', '_config.yml,_config.dev.yml'],
+      {
+        stdio: 'inherit',
+      },
+    );
+  }
+}
 
-/**
- * Rebuild Jekyll & do page reload
- */
-gulp.task('jekyll-rebuild', ['jekyll-build'], function () {
-    browserSync.reload();
-});
+function style() {
+  const processors = [
+    prefix({ browsers: ['> 5%', 'last 3 versions'] }),
+    cssnano,
+  ];
+  return gulp
+    .src('_scss/main.scss')
+    .pipe(
+      sass({
+        includePaths: ['scss'],
+        onError: browserSync.notify,
+      }),
+    )
+    .pipe(postcss(processors))
+    .pipe(gulp.dest(paths.styles.dest))
+    .pipe(browserSync.reload({ stream: true }))
+    .pipe(gulp.dest(paths.styles.destsecond));
+}
 
-/**
- * Wait for jekyll-build, then launch the Server
- */
-gulp.task('browser-sync', ['sass', 'jekyll-build'], function() {
-    browserSync({
-        server: {
-            baseDir: '_site'
-        }
-    });
-});
+function reload(done) {
+  browserSync.reload();
+  done();
+}
 
-/**
- * Compile files from _scss into both _site/css (for live injecting) and site (for future jekyll builds)
- */
-gulp.task('sass', function () {
-    var processors = [
-            prefix({ browsers: ['> 5%', 'last 3 versions'] }),
-            csswring,
-            cssnano,
-          ];
-    return gulp.src('_scss/main.scss')
-        .pipe(sass({
-            includePaths: ['scss'],
-            onError: browserSync.notify
-        }))
-        .pipe(postcss(processors))
-        .pipe(gulp.dest('_site/assets/css'))
-        .pipe(browserSync.reload({stream:true}))
-        .pipe(gulp.dest('assets/css'));
-});
+function browserSyncServe() {
+  browserSync.init({
+    server: {
+      baseDir: '_site',
+    },
+  });
+}
 
-/**
- * Watch scss files for changes & recompile
- * Watch html/md/js/json/image files, run jekyll & reload BrowserSync
- */
-gulp.task('watch', function () {
-    gulp.watch('_scss/*.scss', ['sass']);
-    gulp.watch(['./**/*.html', '_data/*.json', 'assets/scripts/*.js', 'assets/images/*.*'], ['jekyll-rebuild']);
-});
+function watch() {
+  gulp.watch(paths.styles.src, style);
+  gulp.watch(
+    [
+      '*.html',
+      '_layouts/*.html',
+      '_pages/*',
+      '_posts/*',
+      '_data/*',
+      '_includes/*',
+      'assets/scripts/*.js',
+      'assets/images/*.*',
+      // './**/*.md' // causes infinite loop
+    ],
+    gulp.series(jekyllBuild, reload),
+  );
+}
 
 /**
  * Delete .publish directory
  */
-gulp.task('clean', function () {
-    return del('.publish/**/*');
-});
+gulp.task('clean', () => del('.publish/**/*'));
+
+/**
+ * Rebuild Jekyll & do page reload
+ */
+gulp.task('jekyll-rebuild', gulp.series(jekyllBuild, reload));
 
 /**
  * Default task, running just `gulp` will compile the sass,
@@ -89,12 +110,13 @@ gulp.task('clean', function () {
  * To run locally:
  * $ NODE_ENV=dev gulp
  */
-gulp.task('default', ['browser-sync', 'watch']);
+gulp.task('default', gulp.parallel(jekyllBuild, browserSyncServe, watch));
 
 /**
  * Deploy to GitHub Pages
  */
-gulp.task("deploy", ["jekyll-build"], function () {
-    return gulp.src("./_site/**/*")
-        .pipe(deploy());
-});
+function deploy() {
+  return gulp.src('./_site/**/*').pipe(ghpages());
+}
+
+gulp.task('deploy', gulp.series(jekyllBuild, gulp.parallel(deploy)));
