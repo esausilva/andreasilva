@@ -16,7 +16,7 @@ canonical: "http://andreasilva.design/"
 # Build settings
 markdown: kramdown
 exclude: ["node_modules", "gulpfile.js", "package.json"]
-gems:
+plugins:
     - jekyll-minifier
 jekyll-minifier:
   exclude: ["assets/css/*.css","*.min.*"]
