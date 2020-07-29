@@ -19,4 +19,4 @@ exclude: ["node_modules", "gulpfile.js", "package.json"]
 plugins:
     - jekyll-minifier
 jekyll-minifier:
-  exclude: ["assets/css/*.css","*.min.*"]
+  exclude: ["assets/css/*.css","*.min.*","*.js"]
