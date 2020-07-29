@@ -5,35 +5,35 @@
       "image": "wedding-tn.jpg",
       "alt": "Allstuff Love Story",
       "gallery": "art/allstuff",
-      "html": "fine-art-and-illustration/allstuff-love-story.html"
+      "html": "fine-art/allstuff-love-story.html"
     },
     {
       "title": "Europe",
       "image": "Wisdom_Cafe-tn.jpg",
       "alt": "Europe",
       "gallery": "art/europe",
-      "html": "fine-art-and-illustration/europe.html"
+      "html": "fine-art/europe.html"
     },
     {
       "title": "Scenes From Literature",
       "image": "Banker_and_Bandersnatch-tn.jpg",
       "alt": "Scenes From Literature",
       "gallery": "art/literature",
-      "html": "fine-art-and-illustration/scenes-from-literature.html"
+      "html": "fine-art/scenes-from-literature.html"
     },
     {
       "title": "Misfits Audio",
       "image": "DecemberTwine-tn.jpg",
       "alt": "Misfits Audio",
       "gallery": "art/misfits",
-      "html": "fine-art-and-illustration/misfits-audio.html"
+      "html": "fine-art/misfits-audio.html"
     },
     {
       "title": "Miscellaneous",
       "image": "TheMusician-tn.jpg",
       "alt": "Miscellaneous",
       "gallery": "art/misc",
-      "html": "fine-art-and-illustration/miscellaneous.html"
+      "html": "fine-art/miscellaneous.html"
     }
   ]
 }

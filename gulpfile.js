@@ -45,10 +45,7 @@ function jekyllBuild() {
 }
 
 function style() {
-  const processors = [
-    prefix({ browsers: ['> 5%', 'last 3 versions'] }),
-    cssnano,
-  ];
+  const processors = [cssnano];
   return gulp
     .src('_scss/main.scss')
     .pipe(

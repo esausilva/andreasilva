@@ -1,0 +1,33 @@
+---
+layout: sub
+title: Fine Art
+canonical: http://andreasilva.design/portfolio/fine-art.html
+---
+
+<h1>Fine Art</h1>
+<hr />
+
+<p>
+  I’ve had a love for art ever since childhood. Though I have enjoyed working in
+  several mediums, watercolor has been and to this day remains my favorite. With
+  another life-long love of mine for reading, the application of art to the
+  written word through illustration has been a natural transition. The albums
+  below showcase some of my art collections.
+</p>
+
+<div class="galleries">
+  {% for image in site.data.galleries.art %}
+  <div class="gallery-container">
+    <div>
+      <a href="{{ site.baseurl }}/portfolio/{{ image.html }}">
+        <img
+          alt="{{ image.alt }}"
+          src="{{ site.baseurl }}/assets/images/portfolio/{{ image.gallery }}/{{ image.image }}"
+        />
+      </a>
+    </div>
+    <p>{{ image.title }}</p>
+  </div>
+  {% endfor %}
+  <div class="clearfix"></div>
+</div>

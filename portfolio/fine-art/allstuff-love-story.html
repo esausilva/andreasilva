@@ -1,0 +1,29 @@
+---
+layout: sub
+title: Allstuff Love Story - Fine Art
+canonical: http://andreasilva.design/portfolio/fine-art/allstuff-love-story.html
+---
+
+<h1>Allstuff Love Story</h1>
+<hr />
+
+<p>
+  An Allstuff Love Story is a book I wrote and illustrated for my sister and her
+  husband as a whimsical narrative of their love story.
+</p>
+
+<div id="gallery" style="display: none;">
+  {% for image in site.data.portfolio.art.allstuff %}
+  <a href="http://andreasilva.design">
+    <img
+      alt="{{ image.alt }}"
+      src="{{ site.baseurl }}/assets/images/portfolio/art/{{ image.gallery }}/{{ image.thumb }}"
+      data-image="{{ site.baseurl }}/assets/images/portfolio/art/{{ image.gallery }}/{{ image.full }}"
+      data-description="{{ image.description }}"
+      style="display: none;"
+    />
+  </a>
+  {% endfor %}
+</div>
+
+{% include uniteGallery.html %}

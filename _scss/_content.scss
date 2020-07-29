@@ -11,29 +11,34 @@
   h1 {
     font-family: $fontheadings;
     font-size: 6rem;
-    color: $aquadark;
+    color: $darkgray;
+  }
+
+  .portrait {
+    border-radius: 50%;
+    width: 250px;
   }
 }
 
 .nopadding {
-   padding: 0 !important;
-   margin: 0 !important;
+  padding: 0 !important;
+  margin: 0 !important;
 }
 
 .featured-imgs {
   img {
-      width: 100%;
+    width: 100%;
     height: auto;
   }
-  
+
   div {
-      cursor: pointer;
+    cursor: pointer;
   }
 }
 
 #gallery {
-    margin-top: 20px;
-    margin-bottom: 20px;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 #sr {
@@ -89,7 +94,7 @@
     margin-bottom: 10px;
   }
 
-  i, 
+  i,
   p {
     float: left !important;
   }
@@ -110,11 +115,28 @@
   }
 }
 
-@media (max-width:321px) {
+@media (max-width: 321px) {
   .testimonials {
     .quote {
       width: 78%;
       margin-left: 10px;
+    }
+  }
+}
+
+@media (max-width: 736px) {
+  .content-sub {
+    h1 {
+      font-size: 4.5rem;
+    }
+  }
+}
+
+@media (max-width: 420px) {
+  .content-sub {
+    h1 {
+      font-size: 4rem;
+      text-align: center;
     }
   }
 }

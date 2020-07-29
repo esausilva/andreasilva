@@ -3,16 +3,23 @@ layout: home
 title: Home
 canonical: http://andreasilva.design/
 ---
+
 <div class="row featured-imgs" id="featured-imgs">
   {% for image in site.data.featuredImages %}
-    <div class="col-md-6 col-sm-6 nopadding" id="{{ image.title | replace: ' ', '' }}">
-      <div class="hovereffect">
-        <img src="{{ site.baseurl }}/assets/images/{{ image.name }}" alt="{{ image.title }}">
-        <div class="overlay">
-          <h2>{{ image.title }}</h2>
-        </div>
+  <div
+    class="col-md-6 col-sm-6 nopadding"
+    id="{{ image.title | replace: ' ', '' }}"
+  >
+    <div class="hovereffect">
+      <img
+        src="{{ site.baseurl }}/assets/images/{{ image.name }}"
+        alt="{{ image.title }}"
+      />
+      <div class="overlay">
+        <h2>{{ image.title }}</h2>
       </div>
     </div>
+  </div>
   {% endfor %}
 </div>
 
@@ -20,22 +27,40 @@ canonical: http://andreasilva.design/
 
 <div class="row">
   <div class="col-md-10 col-md-offset-1">
-    
     <div class="row testimonials">
       {% for testimonial in site.data.testimonials %}
-        <div class="col-md-6 col-sm-6">
-          <i class="fa fa-quote-left fa-3x" aria-hidden="true"></i>
-          <p>{{ testimonial.quote }}<br>
-          <span class="author">- {{ testimonial.name }} {{ testimonial.title }}</span></p>
-          <div class="clearfix"></div>
-        </div>
+      <div class="col-md-6 col-sm-6">
+        <i class="fa fa-quote-left fa-3x" aria-hidden="true"></i>
+        <p>
+          {{ testimonial.quote }}<br />
+          <span class="author"
+            >- {{ testimonial.name }} {{ testimonial.title }}</span
+          >
+        </p>
+        <div class="clearfix"></div>
+      </div>
       {% endfor %}
     </div>
-
   </div>
 </div>
 
-<a href="{{ site.baseurl }}/portfolio/graphic-design.html" class="hidden" id="DesignLnk"></a>
-<a href="{{ site.baseurl }}/portfolio/fine-art-and-illustration.html" class="hidden" id="ArtLnk"></a>
-<a href="{{ site.baseurl }}/portfolio/photography.html" class="hidden" id="PhotographyLnk"></a>
-<a href="{{ site.baseurl }}/portfolio/animation.html" class="hidden" id="AnimationLnk"></a>
+<a
+  href="{{ site.baseurl }}/portfolio/graphic-design.html"
+  class="hidden"
+  id="DesignLnk"
+></a>
+<a
+  href="{{ site.baseurl }}/portfolio/fine-art.html"
+  class="hidden"
+  id="ArtLnk"
+></a>
+<a
+  href="{{ site.baseurl }}/portfolio/illustration.html"
+  class="hidden"
+  id="IllustrationLnk"
+></a>
+<a
+  href="{{ site.baseurl }}/portfolio/motion-graphics.html"
+  class="hidden"
+  id="MotionGraphicsLnk"
+></a>

@@ -1,6 +1,6 @@
-#header, #header-sub {
-  background: url(../images/headerBg.png) $burgundydark no-repeat top center;
-  background-size: cover;
+#header,
+#header-sub {
+  background: $burgundydark;
   padding-top: 40px;
 }
 
@@ -15,7 +15,7 @@
 }
 
 #logo-text {
-  color: $creamlight;
+  color: #fff;
   font-size: 7rem;
   display: block;
   margin-top: 30px;
@@ -23,30 +23,30 @@
 }
 
 #header-sub {
-    height: 210px;
-    padding-top: 13px;
+  height: 210px;
+  padding-top: 13px;
 
-    img {
-      width: 120px; 
-      margin-right: 8px;
-    }
+  img {
+    width: 120px;
+    margin-right: 8px;
+  }
 
-    #logo-text {
-      display: inline;
-      top: 50px;
-      line-height: 0.5rem;
-    }
-}
-
-@media (max-width:921px) {
-    #header-sub {
-      #logo-text {
-        font-size: 5rem;
-      }
+  #logo-text {
+    display: inline;
+    top: 50px;
+    line-height: 0.5rem;
   }
 }
 
-@media (max-width:737px) {
+@media (max-width: 921px) {
+  #header-sub {
+    #logo-text {
+      font-size: 5rem;
+    }
+  }
+}
+
+@media (max-width: 737px) {
   #header {
     #logo-text {
       margin-top: 15px;
@@ -66,7 +66,7 @@
   }
 }
 
-@media (max-width:767px) {
+@media (max-width: 767px) {
   #logo-text {
     font-size: 3rem;
 
@@ -78,25 +78,25 @@
   }
 }
 
-@media (max-width:769px) {
-    #header-sub {
-      #logo-text {
-        font-size: 5rem;
-      }
+@media (max-width: 769px) {
+  #header-sub {
+    #logo-text {
+      font-size: 5rem;
+    }
   }
 }
 
-@media (min-width:768px) {
+@media (min-width: 768px) {
   #logo-text {
     font-size: 6rem;
   }
 }
 
-@media (max-width:420px) {
-    #header-sub {
-      #logo-text {
-        font-size: 3rem;
-      }
+@media (max-width: 420px) {
+  #header-sub {
+    #logo-text {
+      font-size: 3rem;
+    }
   }
 
   #header {
@@ -108,10 +108,10 @@
   }
 }
 
-@media (max-width:321px) {
-    #header-sub {
-      #logo-text {
-        display: none;
-      }
+@media (max-width: 321px) {
+  #header-sub {
+    #logo-text {
+      display: none;
+    }
   }
 }

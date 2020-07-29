@@ -1,4 +1,4 @@
- [
+[
   {
     "title": "Graphic Design",
     "name": "design.jpg",
@@ -10,13 +10,13 @@
     "description": ""
   },
   {
-    "title": "Photography",
-    "name": "photography.jpg",
+    "title": "Illustration",
+    "name": "illustration.jpg",
     "description": ""
   },
   {
-    "title": "Animation",
-    "name": "animation.jpg",
+    "title": "Motion Graphics",
+    "name": "motion-graphics.jpg",
     "description": ""
   }
 ]

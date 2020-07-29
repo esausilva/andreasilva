@@ -6,9 +6,9 @@
 # you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
-title: Andrea Silva | Design
+title: Andrea Silva Design
 email: esausilva85@gmail.com
-description: Andrea Silva Design showcases the work of graphic designer and artist Andrea Silva, including pieces in digital design, fine art, illustration, and more, located in the Rio Grande Valley. 
+description: Andrea Silva Design showcases the work of graphic designer and artist Andrea Silva, including pieces in digital design, fine art, illustration, and more, located in Music City - Nashville, TN. 
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "http://andreasilva.design" # the base hostname & protocol for your site, e.g. http://example.com
 canonical: "http://andreasilva.design/"

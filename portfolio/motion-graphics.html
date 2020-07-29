@@ -1,0 +1,46 @@
+---
+layout: sub
+title: Motion Graphics
+canonical: http://andreasilva.design/portfolio/motion-graphics.html
+---
+
+<h1>Motion Graphics</h1>
+<hr />
+
+<div id="gallery" style="display: none;">
+  {% for video in site.data.portfolio.motion-graphics %}
+  <div
+    data-type="html5video"
+    data-thumb="{{ site.baseurl }}/assets/images/portfolio/motion-graphics/{{ video.image }}"
+    data-image="{{ site.baseurl }}/assets/images/portfolio/motion-graphics/{{ video.image }}"
+    data-videomp4="{{ site.baseurl }}/assets/images/portfolio/motion-graphics/{{ video.src }}"
+    data-title="{{ video.title }}"
+    data-description="{{ video.description }}"
+  ></div>
+  {% endfor %}
+</div>
+
+<script
+  type="text/javascript"
+  src="{{ site.baseurl }}/assets/plugins/unitegallery/js/unitegallery.min.js"
+></script>
+<link
+  rel="stylesheet"
+  href="{{ site.baseurl }}/assets/plugins/unitegallery/css/unite-gallery.css"
+  type="text/css"
+/>
+<script
+  type="text/javascript"
+  src="{{ site.baseurl }}/assets/plugins/unitegallery/themes/video/ug-theme-video.js"
+></script>
+<link
+  rel="stylesheet"
+  href="{{ site.baseurl }}/assets/plugins/unitegallery/themes/video/skin-right-thumb.css"
+  type="text/css"
+/>
+
+<script type="text/javascript">
+  $(document).ready(function () {
+    $('#gallery').unitegallery();
+  });
+</script>

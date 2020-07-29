@@ -1,0 +1,27 @@
+---
+layout: sub
+title: Illustration
+canonical: http://andreasilva.design/portfolio/illustration.html
+---
+
+<h1>Illustration</h1>
+<hr />
+
+<!-- <p>It’s always a joy for me to capture glimpses of love, life, and relationships through photography, whether the subjects 
+  be children, couples, families, or individuals.</p> -->
+
+<div id="gallery" style="display: none;">
+  {% for image in site.data.portfolio.illustration %}
+  <a href="http://andreasilva.design">
+    <img
+      alt="{{ image.alt }}"
+      src="{{ site.baseurl }}/assets/images/portfolio/illustration/{{ image.thumb }}"
+      data-image="{{ site.baseurl }}/assets/images/portfolio/illustration/{{ image.full }}"
+      data-description="{{ image.description }}"
+      style="display: none;"
+    />
+  </a>
+  {% endfor %}
+</div>
+
+{% include uniteGallery.html %}

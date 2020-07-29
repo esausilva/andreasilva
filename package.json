@@ -20,6 +20,10 @@
     "gulp-postcss": "^8.0.0",
     "gulp-sass": "^4.0.2"
   },
+  "browserslist": [
+    "> 5%",
+    "last 3 versions"
+  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/esausilva/jekyll-gulp-boilerplate.git"
