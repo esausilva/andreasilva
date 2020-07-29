@@ -1,1 +1,111 @@
-$(document).ready(function(e){function n(e){s.height()<420?(r=e-100,o.height(r)):(r=e-238,o.height(r))}function a(){var a=e("nav").height(),i=s.height()-(a-5);e("#header").css({width:s.width(),height:i}),n(i-35)}function i(){var e=window.navigator.userAgent,n=e.indexOf("MSIE ");if(n>0)return parseInt(e.substring(n+5,e.indexOf(".",n)),10);var a=e.indexOf("Trident/");if(a>0){var i=e.indexOf("rv:");return parseInt(e.substring(i+3,e.indexOf(".",i)),10)}var t=e.indexOf("Edge/");return t>0?parseInt(e.substring(t+5,e.indexOf(".",t)),10):!1}function t(){e("#contact-form").validate({rules:{name:"required",email:{required:!0,email:!0},message:"required"},messages:{name:"Please enter your name",email:"Please enter a valid email address",message:"Please enter a message"},submitHandler:function(n,a){a.preventDefault();var i=e("#contact-form"),t=e("input:submit",i),r=t.val();e.ajax({url:"//formspree.io/andreasilva.design@outlook.com",method:"POST",data:i.serialize(),dataType:"json",beforeSend:function(){i.prepend('<div class="alert alert-info" role="alert">Sending message...</div>'),t.attr("disabled",!0).val("Sending message...")},success:function(n){e(".alert-info").remove(),i.prepend('<div class="alert alert-success" role="alert">Message sent!</div>'),t.val("Message sent!"),i[0].reset(),setTimeout(function(){e(".alert-success").remove(),t.attr("disabled",!1).val(r)},5e3)},error:function(n){e(".alert-info").remove(),i.prepend('<div class="alert alert-danger" role="alert">Ops, there was an error. Please try again in 5 seconds.</div>'),t.val("Ops, there was an error."),setTimeout(function(){e(".alert-error").remove(),t.attr("disabled",!1).val(r)},5e3)}})}})}var r,s=e(window),o=e("#logo-main");a(),s.resize(function(){a()}),e("#GraphicDesign").click(function(){e("#DesignLnk")[0].click()}),e("#FineArt").click(function(){e("#ArtLnk")[0].click()}),e("#Photography").click(function(){e("#PhotographyLnk")[0].click()}),e("#Animation").click(function(){e("#AnimationLnk")[0].click()}),i()>9||0==i()?window.sr=ScrollReveal().reveal("#sr",{duration:1e3,mobile:!0,origin:"top",scale:1}):e("#sr").css({visibility:"visible"}),e('a[href*="#"]:not([href="#"])').click(function(){if(location.pathname.replace(/^\//,"")==this.pathname.replace(/^\//,"")&&location.hostname==this.hostname){var n=e(this.hash);if(n=n.length?n:e("[name="+this.hash.slice(1)+"]"),n.length)return e("html, body").animate({scrollTop:n.offset().top},1e3),!1}});var l=window.location.href;l.includes("contact-me")&&t()});
+$(document).ready(function ($) {
+  //  Resizing index header =================================
+  var windowObj = $(window);
+  var logoMain = $('#logo-main');
+  var logoMainHeight;
+
+  function logoHeight(headerHeight) {
+    if (windowObj.height() < 420) {
+      logoMainHeight = headerHeight - 100;
+
+      logoMain.height(logoMainHeight);
+    } else {
+      logoMainHeight = headerHeight - 238;
+
+      logoMain.height(logoMainHeight);
+    }
+  }
+
+  function fullscreen() {
+    var navHeight = $('nav').height();
+    var headerHeight = windowObj.height() - (navHeight - 5);
+    $('#header').css({
+      width: windowObj.width(),
+      height: headerHeight,
+    });
+
+    logoHeight(headerHeight - 35);
+  }
+
+  fullscreen();
+
+  windowObj.resize(function () {
+    fullscreen();
+  });
+
+  // Assign links to Feature Images =============================
+  $('#GraphicDesign').click(function () {
+    $('#DesignLnk')[0].click();
+  });
+
+  $('#FineArt').click(function () {
+    $('#ArtLnk')[0].click();
+  });
+
+  $('#Illustration').click(function () {
+    $('#IllustrationLnk')[0].click();
+  });
+
+  $('#MotionGraphics').click(function () {
+    $('#MotionGraphicsLnk')[0].click();
+  });
+
+  // ScrollReveal =============================================
+  function detectIE() {
+    var ua = window.navigator.userAgent;
+
+    var msie = ua.indexOf('MSIE ');
+    if (msie > 0) {
+      // IE 10 or older => return version number
+      return parseInt(ua.substring(msie + 5, ua.indexOf('.', msie)), 10);
+    }
+
+    var trident = ua.indexOf('Trident/');
+    if (trident > 0) {
+      // IE 11 => return version number
+      var rv = ua.indexOf('rv:');
+      return parseInt(ua.substring(rv + 3, ua.indexOf('.', rv)), 10);
+    }
+
+    var edge = ua.indexOf('Edge/');
+    if (edge > 0) {
+      // Edge (IE 12+) => return version number
+      return parseInt(ua.substring(edge + 5, ua.indexOf('.', edge)), 10);
+    }
+
+    // other browser
+    return false;
+  }
+
+  if (detectIE() > 9 || detectIE() == false) {
+    window.sr = ScrollReveal().reveal('#sr', {
+      duration: 1000,
+      mobile: true,
+      origin: 'top',
+      scale: 1,
+    });
+  } else {
+    $('#sr').css({ visibility: 'visible' });
+  }
+
+  // Smooth scroll same page anchor ==============================
+  $('a[href*="#"]:not([href="#"])').click(function () {
+    if (
+      location.pathname.replace(/^\//, '') ==
+        this.pathname.replace(/^\//, '') &&
+      location.hostname == this.hostname
+    ) {
+      var target = $(this.hash);
+      target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+      if (target.length) {
+        $('html, body').animate(
+          {
+            scrollTop: target.offset().top,
+          },
+          1000,
+        );
+        return false;
+      }
+    }
+  });
+});
